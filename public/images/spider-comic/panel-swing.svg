@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-labelledby="title desc">
+  <title id="title">The web swing</title>
+  <desc id="desc">A red-and-blue masked web hero swings above a city in a vintage printed comic panel.</desc>
+  <defs>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.7" fill="#17161a" opacity=".22"/></pattern>
+    <pattern id="web" width="58" height="58" patternUnits="userSpaceOnUse">
+      <path d="M29 0Q27 25 58 29M29 0Q31 25 0 29M0 29Q27 31 29 58M58 29Q31 27 29 58M8 8 50 50M50 8 8 50" fill="none" stroke="#15151a" stroke-width="2.2" opacity=".62"/>
+      <circle cx="29" cy="29" r="2.5" fill="#15151a" opacity=".62"/>
+    </pattern>
+    <clipPath id="panel"><rect width="600" height="760"/></clipPath>
+  </defs>
+  <g clip-path="url(#panel)">
+    <rect width="600" height="760" fill="#f2d28f"/>
+    <path d="M-50 0H650V398Q454 295 280 399T-50 410Z" fill="#e53d36"/>
+    <path d="M0 0 300 384 600 0M-50 130 300 384 650 110M-60 278 300 384 670 260" fill="none" stroke="#fff0ce" stroke-width="13" opacity=".85"/>
+    <path d="M300 384 40 0M300 384 170 0M300 384 450 0M300 384 570 0M300 384 0 170M300 384 600 200" stroke="#17161a" stroke-width="3" opacity=".55"/>
+    <rect width="600" height="760" fill="url(#dots)" opacity=".58"/>
+    <path d="M0 760V548h70v-86h74v121h53V514h83v71h56V454h73v115h54V500h71v-72h66v332Z" fill="#18324a" stroke="#17161a" stroke-width="8"/>
+    <path d="M0 760V640h48v-66h72v113h68V602h66v68h65V563h76v95h63V617h67v-78h64v221Z" fill="#101b2c" stroke="#17161a" stroke-width="8"/>
+    <g fill="#f3c75f"><path d="M31 667h10v17H31zM82 612h10v18H82zM147 692h10v18h-10zM220 630h10v16h-10zM294 700h10v18h-10zM371 616h10v18h-10zM446 683h10v18h-10zM528 625h10v18h-10z"/></g>
+    <path d="M466-20Q441 88 385 189T311 306" fill="none" stroke="#17161a" stroke-width="10"/>
+    <path d="M466-20Q441 88 385 189T311 306" fill="none" stroke="#fff4d9" stroke-width="3"/>
+    <g transform="translate(305 345) rotate(-22)">
+      <!-- trailing leg -->
+      <path d="M35 123Q93 143 130 207L194 279Q204 294 187 306L161 313Q145 310 132 293L52 242Q14 216 5 176Z" fill="#176ca5" stroke="#17161a" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M-12 129Q-49 174-104 207L-157 262Q-171 278-157 292L-134 301Q-117 300-101 284L-37 251Q14 226 31 175Z" fill="#176ca5" stroke="#17161a" stroke-width="12" stroke-linejoin="round"/>
+      <!-- torso -->
+      <path d="M-47 28Q-15 8 20 22L67 58 51 152Q18 176-25 157L-66 123Z" fill="#df332e" stroke="#17161a" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M-47 28Q-15 8 20 22L67 58 51 152Q18 176-25 157L-66 123Z" fill="url(#web)"/>
+      <!-- web-shooting arm -->
+      <path d="M42 47Q87 27 112-4L142-77Q149-96 168-90L189-78Q199-67 190-48L171 31Q163 59 126 81L64 105Z" fill="#df332e" stroke="#17161a" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M42 47Q87 27 112-4L142-77Q149-96 168-90L189-78Q199-67 190-48L171 31Q163 59 126 81L64 105Z" fill="url(#web)"/>
+      <path d="M-55 56Q-97 37-121 20L-177 23Q-198 21-201 3L-199-20Q-193-37-173-34L-105-38Q-71-38-39-1Z" fill="#df332e" stroke="#17161a" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M-55 56Q-97 37-121 20L-177 23Q-198 21-201 3L-199-20Q-193-37-173-34L-105-38Q-71-38-39-1Z" fill="url(#web)"/>
+      <!-- mask -->
+      <path d="M-53-48Q-31-82 9-68L36-45 28 4Q4 30-31 11L-56-11Z" fill="#df332e" stroke="#17161a" stroke-width="12"/>
+      <path d="M-53-48Q-31-82 9-68L36-45 28 4Q4 30-31 11L-56-11Z" fill="url(#web)"/>
+      <path d="M-41-43Q-24-56-13-36L-31-20Q-45-26-41-43ZM7-52Q24-48 25-29L5-21Q-5-35 7-52Z" fill="#fff7df" stroke="#17161a" stroke-width="5"/>
+      <g transform="translate(2 93)" fill="#17161a" stroke="#17161a" stroke-width="4" stroke-linecap="round">
+        <ellipse cy="0" rx="6" ry="12"/><circle cy="-14" r="4"/>
+        <path d="M-4-10-17-19M-5-3-22-4M-4 4-19 15M4-10 17-19M5-3 22-4M4 4 19 15" fill="none"/>
+      </g>
+      <path d="M167-76 183-102 202-93 189-67Z" fill="#df332e" stroke="#17161a" stroke-width="8"/>
+    </g>
+    <path d="M38 45h176l-20 90H42l16-28-25-22Z" fill="#fff0c5" stroke="#17161a" stroke-width="9"/>
+    <text x="55" y="101" fill="#df332e" stroke="#17161a" stroke-width="1" font-family="Impact,Arial Black,sans-serif" font-size="42" font-weight="900" letter-spacing="1">THWIP!</text>
+    <path d="M3 4H597V756H3Z" fill="none" stroke="#17161a" stroke-width="8"/>
+  </g>
+</svg>

@@ -43,7 +43,7 @@
     var comic = document.querySelector(".comic");
     if (comic && C.heroSceneLabel) comic.setAttribute("aria-label", C.heroSceneLabel);
 
-    // scene 5 letter
+    // scene 6 letter
     var body = document.getElementById("letter-body");
     if (body && C.letter) {
       body.innerHTML = "";
@@ -60,7 +60,7 @@
     var sign = document.getElementById("letter-sign");
     if (sign && C.signOff) sign.textContent = C.signOff;
 
-    // scene 6
+    // scene 7
     var wish = document.getElementById("btn-wish");
     if (wish && C.wishLabel) wish.querySelector(".btn__label").textContent = C.wishLabel;
     setText(".finale__line", C.finalLine);
@@ -189,7 +189,7 @@
   }
 
   /* ======================================================================
-     6. Scene 5 — the letter
+     6. Scene 6 — the letter
      ====================================================================== */
   function wireLetter() {
     var stage = document.getElementById("letter-stage");
@@ -226,10 +226,10 @@
   }
 
   /* ======================================================================
-     7. Scene 6 — make a wish (confetti + hearts)
+     7. Scene 7 — make a wish (confetti + hearts)
      ====================================================================== */
   function wireWish() {
-    var scene = document.getElementById("scene-6");
+    var scene = document.getElementById("scene-7");
     var btn = document.getElementById("btn-wish");
     var finale = document.getElementById("finale");
     var canvas = document.getElementById("confetti");
@@ -359,6 +359,112 @@
   }
 
   /* ======================================================================
+     7b. Scene 5 — the hot wheels garage (bays + car detail view)
+     ====================================================================== */
+  function wireGarage() {
+    var list = document.getElementById("garage-bays");
+    if (!list || !C || !C.cars || !C.cars.length) return;
+
+    var cars = C.cars;
+    var count = document.getElementById("garage-count");
+    var view = document.getElementById("carview");
+    var viewImg = document.getElementById("carview-img");
+    var viewName = document.getElementById("carview-name");
+    var viewBay = document.getElementById("carview-bay");
+    var viewNote = document.getElementById("carview-note");
+    var btnClose = document.getElementById("carview-close");
+    var lastFocus = null;
+
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+    /* the count always follows the registered list — never hand-typed */
+    if (count) count.textContent = pad(cars.length) + " cars in the collection";
+
+    cars.forEach(function (car, i) {
+      var li = document.createElement("li");
+      li.className = "garage__bay";
+      li.style.setProperty("--x", ((car.bay && car.bay.x) || 50) + "%");
+      li.style.setProperty("--y", ((car.bay && car.bay.y) || 50) + "%");
+      li.style.setProperty("--w", ((car.bay && car.bay.w) || 14) + "%");
+      li.style.setProperty("--i", String(i));
+
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "garage__bay-btn";
+      b.setAttribute("aria-label", car.name + " — open this bay");
+
+      var img = document.createElement("img");
+      img.src = car.src;
+      img.alt = car.alt || car.name;
+      img.loading = "lazy";
+      img.decoding = "async";
+
+      var name = document.createElement("span");
+      name.className = "garage__name";
+      name.setAttribute("aria-hidden", "true");
+      name.textContent = car.name;
+
+      b.appendChild(img);
+      b.appendChild(name);
+      li.appendChild(b);
+      list.appendChild(li);
+    });
+
+    function open(i, trigger) {
+      var car = cars[i];
+      if (!car || !view) return;
+      lastFocus = trigger || document.activeElement;
+      viewImg.src = car.src;
+      viewImg.alt = car.alt || car.name;
+      viewName.textContent = car.name;
+      viewBay.textContent = "Bay " + pad(i + 1) + " of " + pad(cars.length);
+      if (car.note) { viewNote.textContent = car.note; viewNote.hidden = false; }
+      else { viewNote.textContent = ""; viewNote.hidden = true; }
+      view.hidden = false;
+      document.documentElement.classList.add("is-locked");
+      document.body.classList.add("is-locked");
+      if (window.SmoothScroll) window.SmoothScroll.refresh();
+      if (btnClose) btnClose.focus();
+    }
+
+    function close() {
+      if (!view || view.hidden) return;
+      view.hidden = true;
+      document.documentElement.classList.remove("is-locked");
+      document.body.classList.remove("is-locked");
+      if (window.SmoothScroll) window.SmoothScroll.refresh();
+      if (lastFocus && document.contains(lastFocus)) focusSafely(lastFocus);
+    }
+
+    list.addEventListener("click", function (e) {
+      var btn = e.target.closest ? e.target.closest(".garage__bay-btn") : null;
+      if (!btn) return;
+      var all = list.querySelectorAll(".garage__bay-btn");
+      for (var i = 0; i < all.length; i++) if (all[i] === btn) return open(i, btn);
+    });
+
+    if (btnClose) btnClose.addEventListener("click", close);
+    if (view) {
+      var backdrop = view.querySelector("[data-close]");
+      if (backdrop) backdrop.addEventListener("click", close);
+      view.addEventListener("keydown", function (e) {
+        if (e.key !== "Tab" || !view.hidden === false) return;
+        var f = view.querySelectorAll("button");
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
+    }
+
+    /* Escape closes the car view, wherever focus sits */
+    document.addEventListener("keydown", function (e) {
+      if (!view || view.hidden) return;
+      if (e.key === "Escape") { e.preventDefault(); close(); }
+    });
+  }
+
+  /* ======================================================================
      8. Wiring
      ====================================================================== */
   function wireControls() {
@@ -375,6 +481,7 @@
       var tag = t && t.tagName ? t.tagName.toLowerCase() : "";
       if (tag === "input" || tag === "textarea" || tag === "select" || (t && t.isContentEditable)) return;
       if (document.getElementById("lightbox") && !document.getElementById("lightbox").hidden) return;
+      if (document.getElementById("carview") && !document.getElementById("carview").hidden) return;
       var inLetter = document.getElementById("letter-title");
       if (inLetter && document.activeElement === inLetter) return;
 
@@ -400,6 +507,7 @@
   setActive(0); // registers scene 1 before the first animation frame
   wireUnlock();
   wireLetter();
+  wireGarage();
   wireWish();
   wireControls();
 

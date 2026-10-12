@@ -82,6 +82,7 @@ body::after {
 }
 
 img { display: block; max-width: 100%; }
+[hidden] { display: none !important; } /* class rules must never un-hide these */
 
 ::selection { background: var(--accent); color: #fff; }
 

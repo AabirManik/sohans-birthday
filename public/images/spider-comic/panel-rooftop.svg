@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-labelledby="title desc">
+  <title id="title">Moon over the rooftops</title>
+  <desc id="desc">A red-and-blue masked web hero pauses on a city rooftop beneath a bright moon.</desc>
+  <defs>
+    <pattern id="dots" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.8" fill="#111922" opacity=".34"/></pattern>
+    <pattern id="web" width="58" height="58" patternUnits="userSpaceOnUse">
+      <path d="M29 0Q27 25 58 29M29 0Q31 25 0 29M0 29Q27 31 29 58M58 29Q31 27 29 58M8 8 50 50M50 8 8 50" fill="none" stroke="#12151a" stroke-width="2" opacity=".63"/><circle cx="29" cy="29" r="2.4" fill="#12151a" opacity=".7"/>
+    </pattern>
+    <clipPath id="panel"><rect width="600" height="760"/></clipPath>
+  </defs>
+  <g clip-path="url(#panel)">
+    <rect width="600" height="760" fill="#18374e"/>
+    <path d="M0 0H600V334Q465 384 302 331T0 358Z" fill="#28516a"/>
+    <circle cx="402" cy="225" r="154" fill="#f0d78f" stroke="#17161a" stroke-width="9"/>
+    <circle cx="402" cy="225" r="154" fill="url(#dots)" opacity=".34"/>
+    <path d="M323 198q38-45 78-3t82 0M337 275q47-31 97 8t67-5M372 132q24-25 49-4" fill="none" stroke="#b29b62" stroke-width="12" opacity=".55"/>
+    <g fill="#f8d985" opacity=".82"><circle cx="54" cy="89" r="4"/><circle cx="139" cy="181" r="3"/><circle cx="222" cy="78" r="3"/><circle cx="510" cy="102" r="4"/><circle cx="560" cy="264" r="3"/></g>
+    <path d="M0 760V431h64v-83h76v157h48V389h68v111h55V355h81v149h50V414h72v-89h86v435Z" fill="#1a2a37" stroke="#17161a" stroke-width="8"/>
+    <g fill="#f2cd73"><path d="M30 473h11v18H30zM87 389h10v17H87zM152 522h11v19h-11zM211 424h10v18h-10zM280 469h10v18h-10zM385 399h10v19h-10zM454 473h10v18h-10zM530 380h10v18h-10z"/></g>
+    <!-- rooftop parapet -->
+    <path d="M0 611H600V760H0Z" fill="#bd9c63" stroke="#17161a" stroke-width="10"/>
+    <path d="M0 611H600V649H0Z" fill="#f3dcaa" stroke="#17161a" stroke-width="8"/>
+    <path d="M0 685H600M70 649V760M533 649V760" stroke="#17161a" stroke-width="7" opacity=".55"/>
+    <!-- crouched hero -->
+    <g stroke="#17161a" stroke-width="11" stroke-linejoin="round" stroke-linecap="round">
+      <!-- back leg -->
+      <path d="M292 438Q235 439 201 493L146 555Q132 571 148 587L173 598Q191 598 204 580L273 543Q317 522 340 484Z" fill="#176ba3"/>
+      <!-- forward thigh and boot -->
+      <path d="M341 463Q404 445 452 485L490 533Q501 550 487 565L461 575Q442 575 430 559L380 529 319 531Z" fill="#176ba3"/>
+      <path d="M459 550Q501 549 526 573L553 598Q565 612 551 629L531 642Q511 641 497 625L455 603Z" fill="#df332e"/>
+      <!-- torso -->
+      <path d="M277 305Q309 278 347 296L390 339 380 446Q347 480 296 456L256 408Z" fill="#df332e"/>
+      <path d="M277 305Q309 278 347 296L390 339 380 446Q347 480 296 456L256 408Z" fill="url(#web)" stroke="none"/>
+      <!-- left braced arm -->
+      <path d="M270 329Q231 351 207 395L164 456Q152 475 165 489L188 499Q207 495 220 478L269 427 307 390Z" fill="#df332e"/>
+      <path d="M270 329Q231 351 207 395L164 456Q152 475 165 489L188 499Q207 495 220 478L269 427 307 390Z" fill="url(#web)" stroke="none"/>
+      <!-- right arm resting on knee -->
+      <path d="M360 327Q407 333 437 370L469 422Q479 441 466 457L444 466Q426 462 415 445L376 405 343 385Z" fill="#df332e"/>
+      <path d="M360 327Q407 333 437 370L469 422Q479 441 466 457L444 466Q426 462 415 445L376 405 343 385Z" fill="url(#web)" stroke="none"/>
+      <!-- mask -->
+      <path d="M276 241Q299 202 343 213L372 243 362 294Q340 319 302 305L270 280Z" fill="#df332e"/>
+      <path d="M276 241Q299 202 343 213L372 243 362 294Q340 319 302 305L270 280Z" fill="url(#web)" stroke="none"/>
+      <path d="M286 243Q306 226 322 247L304 265Q287 263 286 243ZM338 232Q357 241 354 259L332 265Q319 250 338 232Z" fill="#fff4d7" stroke-width="5"/>
+      <!-- chest emblem -->
+      <g fill="#17161a" stroke="#17161a" stroke-width="4" stroke-linecap="round">
+        <ellipse cx="326" cy="379" rx="7" ry="13"/><circle cx="326" cy="364" r="5"/>
+        <path d="M320 368 307 359M319 375 302 374M320 383 305 394M332 368 345 359M333 375 350 374M332 383 347 394" fill="none"/>
+      </g>
+    </g>
+    <path d="M3 4H597V756H3Z" fill="none" stroke="#17161a" stroke-width="8"/>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-labelledby="title desc">
+  <title id="title">Home to you</title>
+  <desc id="desc">A masked red-and-blue web hero hangs upside down to kiss an adult woman on a city rooftop at sunset.</desc>
+  <defs>
+    <pattern id="dots" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.8" fill="#291a21" opacity=".22"/></pattern>
+    <pattern id="web" width="58" height="58" patternUnits="userSpaceOnUse">
+      <path d="M29 0Q27 25 58 29M29 0Q31 25 0 29M0 29Q27 31 29 58M58 29Q31 27 29 58M8 8 50 50M50 8 8 50" fill="none" stroke="#15151a" stroke-width="2" opacity=".62"/><circle cx="29" cy="29" r="2.4" fill="#15151a" opacity=".7"/>
+    </pattern>
+    <clipPath id="panel"><rect width="600" height="760"/></clipPath>
+  </defs>
+  <g clip-path="url(#panel)">
+    <rect width="600" height="760" fill="#f0c78e"/>
+    <path d="M0 0H600V460Q429 367 297 455T0 430Z" fill="#d98775"/>
+    <circle cx="300" cy="327" r="224" fill="#f4dfa7" stroke="#17161a" stroke-width="9"/>
+    <circle cx="300" cy="327" r="224" fill="url(#dots)" opacity=".42"/>
+    <path d="M0 760V590h66v-95h67v128h54V549h67v94h59V532h80v90h62V562h55v-80h90v278Z" fill="#29455a" stroke="#17161a" stroke-width="8"/>
+    <g fill="#f5d990"><path d="M26 623h10v18H26zM87 539h10v18H87zM154 670h11v18h-11zM220 586h10v18h-10zM314 652h10v18h-10zM391 579h10v18h-10zM475 638h10v18h-10zM544 549h10v18h-10z"/></g>
+    <!-- web anchor and hanging hero -->
+    <path d="M191-25Q205 107 255 226T293 404" fill="none" stroke="#17161a" stroke-width="9"/>
+    <path d="M191-25Q205 107 255 226T293 404" fill="none" stroke="#fff2d3" stroke-width="3"/>
+    <g transform="translate(0 150)" stroke="#17161a" stroke-width="11" stroke-linejoin="round" stroke-linecap="round">
+      <!-- legs and torso descend from the anchor -->
+      <path d="M194 30Q157 56 143 102L126 177Q120 197 139 207L160 207Q178 197 181 176L199 128 236 101Z" fill="#176ba3"/>
+      <path d="M238 34Q274 46 292 85L313 149Q320 169 303 182L281 185Q264 176 260 155L238 113 214 91Z" fill="#176ba3"/>
+      <path d="M190 95Q218 73 249 96L276 145 269 286Q238 313 203 290L181 232Z" fill="#df332e"/>
+      <path d="M190 95Q218 73 249 96L276 145 269 286Q238 313 203 290L181 232Z" fill="url(#web)" stroke="none"/>
+      <!-- arms frame the inverted head -->
+      <path d="M198 137Q164 171 143 216L119 283Q113 302 131 313L152 315Q169 306 173 287L195 240 223 205Z" fill="#df332e"/>
+      <path d="M198 137Q164 171 143 216L119 283Q113 302 131 313L152 315Q169 306 173 287L195 240 223 205Z" fill="url(#web)" stroke="none"/>
+      <path d="M262 137Q296 163 321 202L344 257Q353 276 338 291L317 296Q300 287 294 269L269 231 244 207Z" fill="#df332e"/>
+      <path d="M262 137Q296 163 321 202L344 257Q353 276 338 291L317 296Q300 287 294 269L269 231 244 207Z" fill="url(#web)" stroke="none"/>
+      <!-- upside-down mask -->
+      <path d="M199 266Q228 237 260 258L282 294 273 348Q250 386 213 371L188 333Z" fill="#df332e"/>
+      <path d="M199 266Q228 237 260 258L282 294 273 348Q250 386 213 371L188 333Z" fill="url(#web)" stroke="none"/>
+      <path d="M205 298Q223 280 238 299L220 319Q204 317 205 298ZM254 293Q272 302 267 321L247 325Q235 309 254 293Z" fill="#fff4d7" stroke-width="5"/>
+    </g>
+    <!-- adult woman, profile, long dark hair and jacket -->
+    <g transform="translate(-54 -20)" stroke="#17161a" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M414 445Q437 389 484 399Q531 406 543 462L539 544Q532 581 500 600L436 591Q414 562 411 520Z" fill="#171923"/>
+      <path d="M417 450Q394 466 387 493L382 543Q385 575 408 596L438 577 445 488Z" fill="#261c20"/>
+      <path d="M427 452Q407 433 389 447L374 464 388 475 377 489 392 501 379 515Q389 539 414 540L442 512Z" fill="#c77f63"/>
+      <path d="M384 472 369 480 384 486M381 504 367 510 384 515" fill="none" stroke-width="6"/>
+      <path d="M432 520Q457 519 478 540L507 621H396L402 560Z" fill="#273f52"/>
+      <path d="M434 532 455 565 441 620M473 544 491 620" fill="none" stroke="#111923" stroke-width="7"/>
+      <!-- hand gently at mask -->
+      <path d="M412 479Q390 452 370 435Q359 427 351 436L348 445 366 466 380 493 405 510Z" fill="#c77f63"/>
+      <path d="M351 437 344 426M361 442 354 427M371 449 365 435" fill="none" stroke-width="5"/>
+    </g>
+    <!-- short inked rays mark the point of contact, like a printed-comic kiss beat -->
+    <path d="m294 448-14-5m22-5-4-15m20 17 10-12m-18 29 4 14" fill="none" stroke="#17161a" stroke-width="6" stroke-linecap="round"/>
+    <path d="m294 448-14-5m22-5-4-15m20 17 10-12m-18 29 4 14" fill="none" stroke="#f5d990" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M3 4H597V756H3Z" fill="none" stroke="#17161a" stroke-width="8"/>
+  </g>
+</svg>

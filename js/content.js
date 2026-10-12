@@ -88,7 +88,56 @@ window.CONTENT = (function () {
     heroSceneLabel:
       "Three original vintage-comic panels show a red-and-blue web hero swinging above the city, pausing on a moonlit rooftop, and sharing a gentle upside-down kiss.",
 
-    /* ---------------- scene 5 — the letter ----------------
+    /* ---------------- scene 5 — the garage ----------------
+       Add or remove cars freely: the bays, the names and the
+       collection count all follow this list.
+       bay (desktop diorama only): where the car sits inside the
+       showroom photo — x / y are the centre point in %, w is the
+       car's width in % of the photo. On phones the cars fall back
+       to a swipeable shelf, so bay can be left off entirely. */
+    garageHeading: "Six little legends, one lit-up shelf",
+    garageLede: "Every car you love, parked in its own lit bay — waiting for you to walk past.",
+    garagePlate: "Parked, polished, and waiting for you",
+    cars: [
+      {
+        name: "Bugatti Chiron",
+        src: "public/images/hotwheels/cars/bugatti-chiron.png",
+        alt: "A blue Bugatti Chiron die-cast car, shown in three-quarter view",
+        bay: { x: 74.5, y: 45.4, w: 13 }
+      },
+      {
+        name: "McLaren P1",
+        src: "public/images/hotwheels/cars/mclaren-p1.png",
+        alt: "An orange McLaren P1 die-cast car, shown in three-quarter view",
+        bay: { x: 74.5, y: 56.9, w: 12 }
+      },
+      {
+        name: "Ferrari Enzo",
+        src: "public/images/hotwheels/cars/ferrari-enzo.png",
+        alt: "A red Ferrari Enzo die-cast car, shown in three-quarter view",
+        bay: { x: 50, y: 49.2, w: 11 }
+      },
+      {
+        name: "Lamborghini Huracán",
+        src: "public/images/hotwheels/cars/lamborghini-huracan.png",
+        alt: "A green Lamborghini Huracán die-cast car with a black wing, shown in three-quarter view",
+        bay: { x: 11.2, y: 32.4, w: 11 }
+      },
+      {
+        name: "Dodge Charger",
+        src: "public/images/hotwheels/cars/dodge-charger.png",
+        alt: "A black Dodge Charger die-cast muscle car with red stripes, shown in three-quarter view",
+        bay: { x: 11.2, y: 47.5, w: 11 }
+      },
+      {
+        name: "Porsche 911 GT3 RS",
+        src: "public/images/hotwheels/cars/porsche-911-gt3-rs.png",
+        alt: "A silver Porsche 911 GT3 RS die-cast car with a red-accented wing, shown in three-quarter view",
+        bay: { x: 38, y: 71.1, w: 13.5 }
+      }
+    ],
+
+    /* ---------------- scene 6 — the letter ----------------
        One entry per paragraph. Keep her words as they are. */
     letter: [
       "First of all, a very happy birthday to the most special person in my life—my love, my happiness, and my forever person. 🥹❤️",
@@ -104,7 +153,7 @@ window.CONTENT = (function () {
     letterClosedNote: "There is something here for you. It has been waiting.",
     openLetterLabel: "Open my letter",
 
-    /* ---------------- scene 6 ---------------- */
+    /* ---------------- scene 7 ---------------- */
     finaleHeading: "Happy Birthday, Sohan",
     finaleLede: "Here's to every laugh, every little adventure, and all the birthdays still waiting for us.",
     wishLabel: "Make a wish",
@@ -120,6 +169,7 @@ window.CONTENT = (function () {
       "Birthday spotlight",
       "Our precious memories",
       "Our little superhero comic",
+      "Sohan's Hot Wheels garage",
       "A letter from your favourite person",
       "Make a wish"
     ]

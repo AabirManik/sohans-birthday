@@ -1,0 +1,7 @@
+# Hot Wheels garage assets
+
+- `garage-showroom.png` is the original, empty miniature-garage backdrop. It has warm amber lighting, graphite display framing, glass shelves, a workshop area, and orange track details. The image deliberately contains no cars, logos, or text so separate cutouts can be layered over it.
+- Six custom generated transparent die-cast-style car cutouts are in `cars/`: Bugatti Chiron, McLaren P1, Ferrari Enzo, Lamborghini Huracán, Dodge Charger, and Porsche 911 GT3 RS. They are Hot Wheels-inspired miniatures, not official product photography or official Hot Wheels artwork.
+- Preserve each cutout's alpha channel and full silhouette in the garage. Do not use the supplied poster screenshots as vehicle cutouts. Additional cars can be added only when their image and model name are provided.
+
+Backdrop prompt: “Wide 16:9, highly detailed miniature collector's garage diorama, viewed straight-on at eye level; deep charcoal and black powder-coated steel, warm amber work lights, glass-front display bays, workbench and pegboard tools, subtle brick and concrete, raised orange loop/ramp and clean tiled floor. Premium toy-car showroom at miniature scale. Leave every shelf, display bay and floor completely empty with generous clear display space for separate transparent PNG toy cars. Obsidian, graphite, burnt orange, copper and cream palette. No people, vehicles, text, letters, numbers, logos or watermark.”

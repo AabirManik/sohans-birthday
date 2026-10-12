@@ -468,6 +468,189 @@ body.is-unlocking .scene--cover .cover__col {
   to   { opacity: 1; transform: none; }
 }
 
+/* ---------------------------------------------------------- 05 garage */
+.scene--garage {
+  background:
+    radial-gradient(1100px 700px at 50% -10%, rgba(207, 116, 51, 0.09), transparent 62%),
+    linear-gradient(180deg, #0a0a0b, #0d0b0a 55%, #0a0a0b);
+}
+.garage { margin-top: clamp(1.8rem, 4vh, 2.8rem); }
+
+.garage__stage {
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: #060505;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.garage__room {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* the cars, parked in their bays */
+.garage__bays {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.garage__bay {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  transform: translate(-50%, -50%);
+}
+/* entrance follows the site's own reveal contract (.garage.reveal -> is-visible),
+   so a frozen or reduced-motion environment can never leave a car invisible */
+.has-js .garage__bay {
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+  transition-delay: calc(var(--i, 0) * 0.09s);
+}
+.has-js .garage.is-visible .garage__bay { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .has-js .garage__bay { opacity: 1; transition: none; }
+}
+.garage__bay-btn {
+  display: block;
+  position: relative; /* the name label hangs under the car, out of flow */
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.35s var(--ease);
+}
+.garage__bay-btn img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto 2.5 / 1; /* reserve space before the pngs decode */
+  display: block;
+  filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.5));
+}
+.garage__bay-btn:hover,
+.garage__bay-btn:focus-visible { transform: translateY(-4px); }
+.garage__bay-btn:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 6px;
+}
+.garage__name {
+  position: absolute;
+  top: calc(100% + 0.5em);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: clamp(0.5rem, 0.62vw, 0.64rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+.garage__bay-btn:hover .garage__name,
+.garage__bay-btn:focus-visible .garage__name { opacity: 1; }
+
+.garage__plate {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+#garage-count { color: var(--track); }
+.scene--garage .btn--ghost { --btn-line: rgba(207, 116, 51, 0.45); }
+.scene--garage .btn--ghost:hover {
+  --btn-bg: rgba(207, 116, 51, 0.16);
+  --btn-line: var(--track);
+}
+
+/* car detail view */
+.carview__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(4, 4, 5, 0.9);
+}
+.carview__panel {
+  position: fixed;
+  z-index: 61;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(560px, 92vw);
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  text-align: center;
+  animation: carviewIn 0.35s var(--ease) both;
+}
+@keyframes carviewIn {
+  from { opacity: 0; transform: translate(-50%, -48%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+.carview__bay {
+  margin: 0 0 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--track);
+}
+.carview__panel img {
+  width: 100%;
+  height: auto;
+  max-height: 46vh;
+  object-fit: contain;
+  display: block;
+}
+.carview__name {
+  margin: 1.4rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 0.6rem + 2vw, 2.2rem);
+  line-height: 1.1;
+  color: var(--ink);
+}
+.carview__note {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink-2);
+}
+.carview__close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.carview__close:hover { background: var(--ink); color: var(--bg); }
+.carview__close svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+
 /* =========================================================== responsive */
 
 @media (max-width: 1000px) {
@@ -482,6 +665,48 @@ body.is-unlocking .scene--cover .cover__col {
   .plate { max-width: min(360px, 100%); justify-self: start; }
   .wish-layout { text-align: left; }
   .cake { justify-self: start; }
+}
+
+@media (max-width: 900px) {
+  /* the diorama is too wide for a phone — the cars become a shelf */
+  .garage__stage {
+    aspect-ratio: auto;
+    border: 0;
+    background: none;
+    overflow: visible;
+  }
+  .garage__room { display: none; }
+  .garage__bays {
+    position: static;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 68%;
+    gap: 0.9rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+    scrollbar-color: var(--track) transparent;
+  }
+  .garage__bay {
+    position: static;
+    width: auto;
+    transform: none;
+    scroll-snap-align: center;
+    border: 1px solid var(--line);
+    background: #0d0c0b;
+    padding: 1.1rem 1rem 1.3rem;
+    animation: none;
+  }
+  .garage__bay-btn { cursor: pointer; }
+  .garage__name {
+    position: static;
+    transform: none;
+    width: auto;
+    margin-top: 0.9em;
+    opacity: 1;
+    color: var(--track);
+  }
 }
 
 @media (max-width: 760px) {

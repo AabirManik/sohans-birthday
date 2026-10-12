@@ -55,7 +55,7 @@
 
         <div class="cover__meta">
           <span>Private page</span>
-          <span>Six scenes</span>
+          <span>Seven scenes</span>
           <span>No account required</span>
         </div>
       </div>
@@ -172,11 +172,38 @@
     </div>
   </section>
 
-  <!-- ============================================== 05 — a letter from her -->
-  <section class="scene scene--letter" id="scene-5" data-scene="5" data-title="A letter from your favourite person" aria-labelledby="s5-title" tabindex="-1">
+  <!-- ============================================ 05 — his hot wheels garage -->
+  <section class="scene scene--garage" id="scene-5" data-scene="5" data-title="Sohan's Hot Wheels garage" aria-labelledby="s5-title" tabindex="-1">
     <div class="scene__inner">
-      <p class="index-mark reveal"><b>05</b> A letter from your favourite person</p>
-      <h2 class="display display--sm reveal" id="s5-title" style="max-width:20ch">Written by hand, kept for you</h2>
+      <p class="index-mark reveal"><b>05</b> Sohan's Hot Wheels garage</p>
+      <h2 class="display display--sm reveal" id="s5-title" style="max-width:24ch" data-bind="garageHeading">Six little legends, one lit-up shelf</h2>
+      <p class="lede reveal" data-delay="1" style="max-width:54ch" data-bind="garageLede">Every car you love, parked in its own lit bay — waiting for you to walk past.</p>
+
+      <div class="garage reveal" data-delay="1">
+        <figure class="garage__stage">
+          <img class="garage__room" src="public/images/hotwheels/garage-showroom.png" alt="" aria-hidden="true" decoding="async">
+          <ul class="garage__bays" id="garage-bays"><!-- built from js/content.js --></ul>
+        </figure>
+        <p class="garage__plate">
+          <span data-bind="garagePlate">His corner of the universe, in six bays</span>
+          <span id="garage-count" aria-live="polite"></span>
+        </p>
+      </div>
+
+      <div class="scene__actions reveal" data-delay="2">
+        <button type="button" class="btn btn--ghost" data-goto="6">
+          <span class="btn__label">Now, a letter for you</span>
+          <svg class="btn__arrow" viewBox="0 0 22 8" aria-hidden="true" focusable="false"><path d="M0 4h20M16.5 1 20 4l-3.5 3" /></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== 06 — a letter from her -->
+  <section class="scene scene--letter" id="scene-6" data-scene="6" data-title="A letter from your favourite person" aria-labelledby="s6-title" tabindex="-1">
+    <div class="scene__inner">
+      <p class="index-mark reveal"><b>06</b> A letter from your favourite person</p>
+      <h2 class="display display--sm reveal" id="s6-title" style="max-width:20ch">Written by hand, kept for you</h2>
 
       <div class="letter-stage reveal" data-delay="1" id="letter-stage">
 
@@ -213,7 +240,7 @@
       </div>
 
       <div class="scene__actions reveal" data-delay="2">
-        <button type="button" class="btn btn--ghost" id="btn-to-wish" data-goto="6" hidden>
+        <button type="button" class="btn btn--ghost" id="btn-to-wish" data-goto="7" hidden>
           <span class="btn__label">Meet me at the cake</span>
           <svg class="btn__arrow" viewBox="0 0 22 8" aria-hidden="true" focusable="false"><path d="M0 4h20M16.5 1 20 4l-3.5 3" /></svg>
         </button>
@@ -221,16 +248,16 @@
     </div>
   </section>
 
-  <!-- ==================================================== 06 — make a wish -->
-  <section class="scene scene--cake" id="scene-6" data-scene="6" data-title="Make a wish, Sohan" aria-labelledby="s6-title" tabindex="-1">
+  <!-- ==================================================== 07 — make a wish -->
+  <section class="scene scene--cake" id="scene-7" data-scene="7" data-title="Make a wish, Sohan" aria-labelledby="s7-title" tabindex="-1">
     <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
 
     <div class="scene__inner">
-      <p class="index-mark reveal"><b>06</b> Make a wish, Sohan</p>
+      <p class="index-mark reveal"><b>07</b> Make a wish, Sohan</p>
 
       <div class="wish-layout">
         <div class="wish__text reveal" data-delay="1">
-          <h2 class="display" id="s6-title" data-bind="finaleHeading">Happy Birthday, Sohan</h2>
+          <h2 class="display" id="s7-title" data-bind="finaleHeading">Happy Birthday, Sohan</h2>
           <p class="lede" data-bind="finaleLede">Here's to every laugh, every little adventure, and all the birthdays still waiting for us.</p>
 
           <div class="finale" id="finale" hidden>
@@ -347,6 +374,20 @@
     <button type="button" class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next photo">
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" /></svg>
     </button>
+  </div>
+</div>
+
+<!-- enlarged car view (scene 5) -->
+<div class="carview" id="carview" role="dialog" aria-modal="true" aria-labelledby="carview-name" hidden>
+  <div class="carview__backdrop" data-close></div>
+  <div class="carview__panel">
+    <button type="button" class="carview__close" id="carview-close" aria-label="Close the car view">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+    </button>
+    <p class="carview__bay" id="carview-bay"></p>
+    <img id="carview-img" alt="">
+    <h3 class="carview__name" id="carview-name"></h3>
+    <p class="carview__note" id="carview-note" hidden></p>
   </div>
 </div>
 
