@@ -298,6 +298,14 @@ body.is-unlocking .scene--cover .cover__col {
   --btn-fg: #fff4dc;
   --btn-line: var(--comic-ink);
 }
+.scene--comic .btn--quiet {
+  color: rgba(23, 22, 26, 0.6);
+  border-bottom-color: rgba(23, 22, 26, 0.28);
+}
+.scene--comic .btn--quiet:hover {
+  color: var(--comic-ink);
+  border-bottom-color: rgba(23, 22, 26, 0.55);
+}
 
 /* ----------------------------------------------------------- 05 letter */
 .scene--letter {

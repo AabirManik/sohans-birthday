@@ -134,6 +134,7 @@
   function setActive(i) {
     if (i === active) return;
     active = i;
+    if (i !== 3) pauseTheme(); // leaving scene 4 stops the music
     document.documentElement.setAttribute("data-active-scene", String(i + 1));
     updateChrome(i);
   }
@@ -359,6 +360,54 @@
   }
 
   /* ======================================================================
+     6b. Scene 4 — the web-slinger theme (an original homage, not the film score)
+     ====================================================================== */
+  var themeAudio = null;
+
+  function setThemeLabel(text) {
+    var l = document.getElementById("theme-label");
+    if (l) l.textContent = text;
+  }
+
+  function pauseTheme() {
+    if (themeAudio && !themeAudio.paused) {
+      themeAudio.pause();
+      setThemeLabel("Play the theme");
+      var b = document.getElementById("theme-toggle");
+      if (b) b.setAttribute("aria-pressed", "false");
+    }
+  }
+
+  function wireTheme() {
+    var btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      if (!themeAudio) {
+        themeAudio = new Audio("public/audio/web-slinger-theme.wav");
+        themeAudio.preload = "none"; // fetched only on first tap
+        themeAudio.loop = true;
+        themeAudio.volume = 0.85;
+      }
+      if (themeAudio.paused) {
+        var p = themeAudio.play();
+        if (p && typeof p.then === "function") {
+          p.then(
+            function () {
+              setThemeLabel("Pause the theme");
+              btn.setAttribute("aria-pressed", "true");
+            },
+            function () {
+              setThemeLabel("Tap to try again");
+            }
+          );
+        }
+      } else {
+        pauseTheme();
+      }
+    });
+  }
+
+  /* ======================================================================
      7b. Scene 5 — the hot wheels garage (bays + car detail view)
      ====================================================================== */
   function wireGarage() {
@@ -509,6 +558,7 @@
   wireLetter();
   wireGarage();
   wireWish();
+  wireTheme();
   wireControls();
 
   document.body.classList.remove("is-loading");

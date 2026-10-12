@@ -226,6 +226,14 @@ body.is-locked { overflow: hidden; }
   overflow: visible;
 }
 .btn__arrow path { stroke: currentColor; stroke-width: 1.2; fill: none; }
+.btn__note {
+  width: 13px;
+  height: 13px;
+  flex: none;
+  overflow: visible;
+}
+.btn__note path,
+.btn__note ellipse { stroke: currentColor; stroke-width: 1.2; fill: none; }
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 
