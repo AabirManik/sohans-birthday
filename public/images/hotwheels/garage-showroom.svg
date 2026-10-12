@@ -1,0 +1,311 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941" width="1672" height="941">
+  <defs>
+    <!-- ceiling light glow -->
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffb45f" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#ff9a3d" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff9a3d" stop-opacity="0"/>
+    </radialGradient>
+    <!-- light cone fade -->
+    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffca8a" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffca8a" stop-opacity="0"/>
+    </linearGradient>
+    <!-- top wash of light on the wall -->
+    <linearGradient id="wallwash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffb45f" stop-opacity="0.17"/>
+      <stop offset="55%" stop-color="#ff9a3d" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ff9a3d" stop-opacity="0"/>
+    </linearGradient>
+    <!-- recess shadow under ceiling -->
+    <linearGradient id="recess" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <!-- side vignettes -->
+    <linearGradient id="vigL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="vigR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.8"/>
+    </linearGradient>
+    <!-- spray clouds behind the piece -->
+    <radialGradient id="cloudP" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6a3fa0" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#6a3fa0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cloudR" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a01f2a" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#a01f2a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cloudT" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f7a8c" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#1f7a8c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cloudO" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b0651f" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#b0651f" stop-opacity="0"/>
+    </radialGradient>
+    <!-- concrete floor -->
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f2b26"/>
+      <stop offset="18%" stop-color="#665f55"/>
+      <stop offset="62%" stop-color="#837b6f"/>
+      <stop offset="100%" stop-color="#6c6459"/>
+    </linearGradient>
+    <!-- wheel contact shade -->
+    <linearGradient id="wheelShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#000" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </linearGradient>
+    <!-- pillar metal -->
+    <linearGradient id="pillar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1c1c20"/>
+      <stop offset="100%" stop-color="#0a0a0c"/>
+    </linearGradient>
+    <linearGradient id="pillarR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0a0a0c"/>
+      <stop offset="100%" stop-color="#1c1c20"/>
+    </linearGradient>
+    <!-- floor reflections of the wall colours -->
+    <radialGradient id="refR" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d92b2b" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#d92b2b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="refW" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ece7dc" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ece7dc" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="refB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7cc4e0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#7cc4e0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="refY" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd21e" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffd21e" stop-opacity="0"/>
+    </radialGradient>
+    <!-- brick hint -->
+    <pattern id="bricks" width="72" height="26" patternUnits="userSpaceOnUse">
+      <rect width="72" height="26" fill="none"/>
+      <path d="M0 25.5 H72 M36 0 V26 M72 0 V13 M0 13 H72" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1.4" fill="none"/>
+    </pattern>
+    <clipPath id="opening">
+      <rect x="24" y="24" width="1624" height="893" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- ===== outer frame ===== -->
+  <rect width="1672" height="941" fill="#08080a"/>
+
+  <g clip-path="url(#opening)">
+    <!-- ceiling -->
+    <rect x="24" y="24" width="1624" height="74" fill="#131315"/>
+    <rect x="24" y="95" width="1624" height="2.5" fill="#000" opacity="0.9"/>
+
+    <!-- ===== wall ===== -->
+    <rect x="24" y="96" width="1624" height="464" fill="#0b0b0d"/>
+    <rect x="24" y="96" width="1624" height="464" fill="url(#bricks)"/>
+
+    <!-- spray clouds -->
+    <ellipse cx="300" cy="310" rx="300" ry="220" fill="url(#cloudP)"/>
+    <ellipse cx="830" cy="345" rx="330" ry="235" fill="url(#cloudR)"/>
+    <ellipse cx="1260" cy="330" rx="300" ry="225" fill="url(#cloudT)"/>
+    <ellipse cx="560" cy="430" rx="260" ry="170" fill="url(#cloudO)"/>
+
+    <!-- ===== the piece: S O H A N, chunky outlined letters ===== -->
+    <!-- hard offset shadows -->
+    <g transform="translate(13,15)" stroke="#000" stroke-opacity="0.55" stroke-width="126" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 330 235 C 295 180 150 175 128 252 C 110 322 298 315 298 398 C 298 478 155 490 112 435"/>
+      <path d="M 470 198 C 588 183 662 250 656 352 C 650 462 558 508 468 492 C 378 476 348 400 354 310 C 360 226 402 203 470 198 Z"/>
+      <path d="M 762 208 L 748 500 M 934 198 L 920 492 M 754 356 L 926 346"/>
+      <path d="M 1012 496 L 1108 212 L 1204 492 M 1048 402 L 1170 394"/>
+      <path d="M 1292 496 L 1306 210 L 1466 468 L 1480 204"/>
+    </g>
+    <!-- black outlines -->
+    <g stroke="#0a0a0b" stroke-width="124" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 330 235 C 295 180 150 175 128 252 C 110 322 298 315 298 398 C 298 478 155 490 112 435"/>
+      <path d="M 470 198 C 588 183 662 250 656 352 C 650 462 558 508 468 492 C 378 476 348 400 354 310 C 360 226 402 203 470 198 Z"/>
+      <path d="M 762 208 L 748 500 M 934 198 L 920 492 M 754 356 L 926 346"/>
+      <path d="M 1012 496 L 1108 212 L 1204 492 M 1048 402 L 1170 394"/>
+      <path d="M 1292 496 L 1306 210 L 1466 468 L 1480 204"/>
+    </g>
+    <!-- letter fills -->
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 330 235 C 295 180 150 175 128 252 C 110 322 298 315 298 398 C 298 478 155 490 112 435" stroke="#ece7dc" stroke-width="84"/>
+      <path d="M 470 198 C 588 183 662 250 656 352 C 650 462 558 508 468 492 C 378 476 348 400 354 310 C 360 226 402 203 470 198 Z" stroke="#d92b2b" stroke-width="84"/>
+      <path d="M 762 208 L 748 500 M 934 198 L 920 492 M 754 356 L 926 346" stroke="#7cc4e0" stroke-width="84"/>
+      <path d="M 1012 496 L 1108 212 L 1204 492 M 1048 402 L 1170 394" stroke="#ece7dc" stroke-width="84"/>
+      <path d="M 1292 496 L 1306 210 L 1466 468 L 1480 204" stroke="#d92b2b" stroke-width="84"/>
+    </g>
+    <!-- inner accent spines -->
+    <g fill="none" stroke-width="11" stroke-opacity="0.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 330 235 C 295 180 150 175 128 252 C 110 322 298 315 298 398 C 298 478 155 490 112 435" stroke="#d92b2b"/>
+      <path d="M 470 198 C 588 183 662 250 656 352 C 650 462 558 508 468 492 C 378 476 348 400 354 310 C 360 226 402 203 470 198 Z" stroke="#f4f1ea" stroke-dasharray="26 20"/>
+      <path d="M 762 208 L 748 500 M 934 198 L 920 492 M 754 356 L 926 346" stroke="#d92b2b"/>
+      <path d="M 1012 496 L 1108 212 L 1204 492 M 1048 402 L 1170 394" stroke="#3fae5f"/>
+      <path d="M 1292 496 L 1306 210 L 1466 468 L 1480 204" stroke="#7cc4e0"/>
+    </g>
+    <!-- gloss shines -->
+    <g stroke="#ffffff" stroke-opacity="0.5" stroke-width="9" stroke-linecap="round" fill="none">
+      <path d="M 205 208 C 240 190 285 192 312 205"/>
+      <path d="M 430 225 C 450 210 490 205 520 212"/>
+      <path d="M 770 245 L 763 300"/>
+      <path d="M 1078 262 L 1102 208"/>
+      <path d="M 1310 250 L 1318 305"/>
+    </g>
+
+    <!-- paint drips off the letters -->
+    <g>
+      <rect x="196" y="474" width="11" height="36" rx="5.5" fill="#ece7dc"/>
+      <circle cx="201.5" cy="514" r="7" fill="#ece7dc"/>
+      <rect x="520" y="496" width="12" height="42" rx="6" fill="#d92b2b"/>
+      <circle cx="526" cy="542" r="8" fill="#d92b2b"/>
+      <rect x="800" y="502" width="10" height="30" rx="5" fill="#7cc4e0"/>
+      <circle cx="805" cy="536" r="6.5" fill="#7cc4e0"/>
+      <rect x="1352" y="470" width="11" height="38" rx="5.5" fill="#d92b2b"/>
+      <circle cx="1357.5" cy="512" r="7" fill="#d92b2b"/>
+      <rect x="1128" y="488" width="10" height="26" rx="5" fill="#ece7dc"/>
+    </g>
+
+    <!-- yellow tags over the piece -->
+    <g stroke="#ffd21e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 190 208 C 235 152 292 238 346 178 C 396 122 430 214 490 172 C 546 130 582 204 640 168 C 690 138 722 194 776 164 C 800 150 816 178 800 198"/>
+      <path d="M 1232 172 C 1288 130 1348 202 1404 158 C 1448 122 1498 178 1538 152"/>
+      <path d="M 142 522 C 178 500 194 542 162 556 C 136 566 120 538 142 522 Z"/>
+      <path d="M 1516 420 C 1540 400 1560 430 1544 448"/>
+    </g>
+    <!-- little yellow flicks -->
+    <g stroke="#ffd21e" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9">
+      <path d="M 250 246 L 262 268"/>
+      <path d="M 420 196 L 430 216"/>
+      <path d="M 690 196 L 700 214"/>
+      <path d="M 1300 200 L 1310 218"/>
+    </g>
+
+    <!-- green arrow + pink star accents -->
+    <g stroke="#3fae5f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M 946 252 L 1012 242 L 988 218 M 1012 242 L 988 268"/>
+    </g>
+    <path d="M 706 150 L 714 176 L 742 176 L 719 192 L 728 218 L 706 202 L 684 218 L 693 192 L 670 176 L 698 176 Z" fill="#e05a8a" opacity="0.92"/>
+
+    <!-- splatter -->
+    <g>
+      <circle cx="256" cy="540" r="5" fill="#d92b2b" opacity="0.85"/>
+      <circle cx="286" cy="556" r="3" fill="#d92b2b" opacity="0.8"/>
+      <circle cx="380" cy="140" r="4.5" fill="#ece7dc" opacity="0.8"/>
+      <circle cx="612" cy="540" r="5.5" fill="#ffd21e" opacity="0.8"/>
+      <circle cx="646" cy="528" r="3" fill="#ffd21e" opacity="0.75"/>
+      <circle cx="868" cy="150" r="4" fill="#7cc4e0" opacity="0.85"/>
+      <circle cx="900" cy="140" r="2.5" fill="#7cc4e0" opacity="0.8"/>
+      <circle cx="1040" cy="544" r="5" fill="#3fae5f" opacity="0.85"/>
+      <circle cx="1078" cy="552" r="3" fill="#3fae5f" opacity="0.8"/>
+      <circle cx="1234" cy="536" r="4.5" fill="#e05a8a" opacity="0.85"/>
+      <circle cx="1508" cy="240" r="4" fill="#ece7dc" opacity="0.75"/>
+      <circle cx="1530" cy="262" r="2.5" fill="#ece7dc" opacity="0.7"/>
+      <circle cx="120" cy="330" r="4" fill="#ffd21e" opacity="0.7"/>
+      <circle cx="1580" cy="330" r="4" fill="#d92b2b" opacity="0.7"/>
+    </g>
+
+    <!-- wall lighting overlays -->
+    <rect x="24" y="96" width="1624" height="464" fill="url(#wallwash)"/>
+    <rect x="24" y="96" width="1624" height="30" fill="url(#recess)"/>
+    <rect x="24" y="96" width="150" height="464" fill="url(#vigL)"/>
+    <rect x="1498" y="96" width="150" height="464" fill="url(#vigR)"/>
+
+    <!-- ===== floor ===== -->
+    <rect x="24" y="560" width="1624" height="312" fill="url(#floor)"/>
+
+    <!-- tile seams -->
+    <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="2">
+      <path d="M 24 648 H 1648 M 24 792 H 1648"/>
+      <path d="M 352 560 L 300 872 M 704 560 L 676 872 M 1056 560 L 1084 872 M 1408 560 L 1468 872"/>
+    </g>
+
+    <!-- graffiti colour reflections on the concrete -->
+    <ellipse cx="540" cy="762" rx="200" ry="96" fill="url(#refR)"/>
+    <ellipse cx="1396" cy="752" rx="180" ry="86" fill="url(#refR)"/>
+    <ellipse cx="230" cy="780" rx="160" ry="74" fill="url(#refW)"/>
+    <ellipse cx="1122" cy="772" rx="150" ry="70" fill="url(#refW)"/>
+    <ellipse cx="856" cy="764" rx="176" ry="82" fill="url(#refB)"/>
+    <ellipse cx="500" cy="832" rx="300" ry="48" fill="url(#refY)"/>
+    <ellipse cx="1360" cy="826" rx="220" ry="42" fill="url(#refY)"/>
+
+    <!-- parking bays: back stop line + six stalls -->
+    <g stroke="#ffffff" stroke-opacity="0.5" stroke-width="4.5" stroke-linecap="round">
+      <path d="M 100 602 H 1572"/>
+      <path d="M 100 602 V 732 M 345 602 V 732 M 591 602 V 732 M 836 602 V 732 M 1081 602 V 732 M 1327 602 V 732 M 1572 602 V 732"/>
+    </g>
+    <g stroke="#ffffff" stroke-opacity="0.28" stroke-width="3" stroke-linecap="round">
+      <path d="M 222 742 V 756 M 468 742 V 756 M 713 742 V 756 M 958 742 V 756 M 1204 742 V 756 M 1449 742 V 756"/>
+    </g>
+
+    <!-- contact shade where the cars will stand -->
+    <rect x="60" y="676" width="1552" height="60" fill="url(#wheelShade)"/>
+
+    <!-- ===== front lip ===== -->
+    <rect x="24" y="872" width="1624" height="46" fill="#121214"/>
+    <rect x="24" y="872" width="1624" height="5" fill="#ff9a3d" opacity="0.32"/>
+    <g fill="#ff9a3d" opacity="0.14">
+      <rect x="60" y="890" width="14" height="4"/><rect x="114" y="890" width="14" height="4"/>
+      <rect x="168" y="890" width="14" height="4"/><rect x="222" y="890" width="14" height="4"/>
+      <rect x="276" y="890" width="14" height="4"/><rect x="330" y="890" width="14" height="4"/>
+      <rect x="384" y="890" width="14" height="4"/><rect x="438" y="890" width="14" height="4"/>
+      <rect x="492" y="890" width="14" height="4"/><rect x="546" y="890" width="14" height="4"/>
+      <rect x="600" y="890" width="14" height="4"/><rect x="654" y="890" width="14" height="4"/>
+      <rect x="708" y="890" width="14" height="4"/><rect x="762" y="890" width="14" height="4"/>
+      <rect x="816" y="890" width="14" height="4"/><rect x="870" y="890" width="14" height="4"/>
+      <rect x="924" y="890" width="14" height="4"/><rect x="978" y="890" width="14" height="4"/>
+      <rect x="1032" y="890" width="14" height="4"/><rect x="1086" y="890" width="14" height="4"/>
+      <rect x="1140" y="890" width="14" height="4"/><rect x="1194" y="890" width="14" height="4"/>
+      <rect x="1248" y="890" width="14" height="4"/><rect x="1302" y="890" width="14" height="4"/>
+      <rect x="1356" y="890" width="14" height="4"/><rect x="1410" y="890" width="14" height="4"/>
+      <rect x="1464" y="890" width="14" height="4"/><rect x="1518" y="890" width="14" height="4"/>
+      <rect x="1572" y="890" width="14" height="4"/>
+    </g>
+    <rect x="24" y="915" width="1624" height="2.5" fill="#000" opacity="0.8"/>
+
+    <!-- side pillars -->
+    <rect x="24" y="24" width="40" height="893" fill="url(#pillar)"/>
+    <rect x="1608" y="24" width="40" height="893" fill="url(#pillarR)"/>
+
+    <!-- ceiling lights: housings, lamps, glow, cones -->
+    <g>
+      <g fill="#0a0a0b">
+        <rect x="129" y="40" width="34" height="13" rx="3"/><rect x="294" y="40" width="34" height="13" rx="3"/>
+        <rect x="460" y="40" width="34" height="13" rx="3"/><rect x="625" y="40" width="34" height="13" rx="3"/>
+        <rect x="791" y="40" width="34" height="13" rx="3"/><rect x="956" y="40" width="34" height="13" rx="3"/>
+        <rect x="1122" y="40" width="34" height="13" rx="3"/><rect x="1287" y="40" width="34" height="13" rx="3"/>
+        <rect x="1453" y="40" width="34" height="13" rx="3"/>
+      </g>
+      <g fill="#fff0d2">
+        <ellipse cx="146" cy="56" rx="12" ry="5.5"/><ellipse cx="311" cy="56" rx="12" ry="5.5"/>
+        <ellipse cx="477" cy="56" rx="12" ry="5.5"/><ellipse cx="642" cy="56" rx="12" ry="5.5"/>
+        <ellipse cx="808" cy="56" rx="12" ry="5.5"/><ellipse cx="973" cy="56" rx="12" ry="5.5"/>
+        <ellipse cx="1139" cy="56" rx="12" ry="5.5"/><ellipse cx="1304" cy="56" rx="12" ry="5.5"/>
+        <ellipse cx="1470" cy="56" rx="12" ry="5.5"/>
+      </g>
+      <g fill="url(#glow)">
+        <circle cx="146" cy="58" r="34"/><circle cx="311" cy="58" r="34"/><circle cx="477" cy="58" r="34"/>
+        <circle cx="642" cy="58" r="34"/><circle cx="808" cy="58" r="34"/><circle cx="973" cy="58" r="34"/>
+        <circle cx="1139" cy="58" r="34"/><circle cx="1304" cy="58" r="34"/><circle cx="1470" cy="58" r="34"/>
+      </g>
+      <g fill="url(#cone)">
+        <path d="M 116 60 H 176 L 246 330 H 46 Z"/>
+        <path d="M 281 60 H 341 L 411 330 H 211 Z"/>
+        <path d="M 447 60 H 507 L 577 330 H 377 Z"/>
+        <path d="M 612 60 H 672 L 742 330 H 542 Z"/>
+        <path d="M 778 60 H 838 L 908 330 H 708 Z"/>
+        <path d="M 943 60 H 1003 L 1073 330 H 873 Z"/>
+        <path d="M 1109 60 H 1169 L 1239 330 H 1039 Z"/>
+        <path d="M 1274 60 H 1334 L 1404 330 H 1204 Z"/>
+        <path d="M 1440 60 H 1500 L 1570 330 H 1370 Z"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- frame edge -->
+  <rect x="24.8" y="24.8" width="1622.4" height="891.4" rx="10" fill="none" stroke="#2b2b30" stroke-width="1.8"/>
+</svg>

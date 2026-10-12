@@ -535,6 +535,7 @@ body.is-unlocking .scene--cover .cover__col {
   aspect-ratio: auto 2.5 / 1; /* reserve space before the pngs decode */
   display: block;
   filter: drop-shadow(0 12px 16px rgba(0, 0, 0, 0.5));
+  -webkit-box-reflect: below 3px linear-gradient(rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 52%);
 }
 .garage__bay-btn:hover,
 .garage__bay-btn:focus-visible { transform: translateY(-4px); }
@@ -699,6 +700,7 @@ body.is-unlocking .scene--cover .cover__col {
     animation: none;
   }
   .garage__bay-btn { cursor: pointer; }
+  .garage__bay-btn img { -webkit-box-reflect: unset; }
   .garage__name {
     position: static;
     transform: none;

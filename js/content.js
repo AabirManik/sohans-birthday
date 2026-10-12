@@ -103,37 +103,37 @@ window.CONTENT = (function () {
         name: "Bugatti Chiron",
         src: "public/images/hotwheels/cars/bugatti-chiron.png",
         alt: "A blue Bugatti Chiron die-cast car, shown in three-quarter view",
-        bay: { x: 74.5, y: 45.4, w: 13 }
+        bay: { x: 13.3, y: 69.8, w: 12.8 }
       },
       {
         name: "McLaren P1",
         src: "public/images/hotwheels/cars/mclaren-p1.png",
         alt: "An orange McLaren P1 die-cast car, shown in three-quarter view",
-        bay: { x: 74.5, y: 56.9, w: 12 }
+        bay: { x: 28, y: 69.8, w: 12.8 }
       },
       {
         name: "Ferrari Enzo",
         src: "public/images/hotwheels/cars/ferrari-enzo.png",
         alt: "A red Ferrari Enzo die-cast car, shown in three-quarter view",
-        bay: { x: 66.5, y: 72.2, w: 11 }
+        bay: { x: 42.7, y: 70, w: 12.8 }
       },
       {
         name: "Lamborghini Huracán",
         src: "public/images/hotwheels/cars/lamborghini-huracan.png",
         alt: "A green Lamborghini Huracán die-cast car with a black wing, shown in three-quarter view",
-        bay: { x: 24.5, y: 72.3, w: 11 }
+        bay: { x: 57.3, y: 70, w: 12.8 }
       },
       {
         name: "Dodge Charger",
         src: "public/images/hotwheels/cars/dodge-charger.png",
         alt: "A black Dodge Charger die-cast muscle car with red stripes, shown in three-quarter view",
-        bay: { x: 38.5, y: 72.1, w: 11 }
+        bay: { x: 72, y: 69.8, w: 12.8 }
       },
       {
         name: "Porsche 911 GT3 RS",
         src: "public/images/hotwheels/cars/porsche-911-gt3-rs.png",
         alt: "A silver Porsche 911 GT3 RS die-cast car with a red-accented wing, shown in three-quarter view",
-        bay: { x: 52.5, y: 71.7, w: 12 }
+        bay: { x: 86.7, y: 69.8, w: 12.8 }
       }
     ],
 
