@@ -66,7 +66,7 @@ window.CONTENT = (function () {
         caption: "Somewhere quiet, thinking of you.",
         alt: "A portrait of Sohan’s girlfriend in a blue sari in a garden",
         size: "wide",
-        focal: "50% 26%"
+        focal: "50% 71%"
       },
       { group: "You, being you" },
       {
