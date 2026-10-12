@@ -115,25 +115,25 @@ window.CONTENT = (function () {
         name: "Ferrari Enzo",
         src: "public/images/hotwheels/cars/ferrari-enzo.png",
         alt: "A red Ferrari Enzo die-cast car, shown in three-quarter view",
-        bay: { x: 50, y: 49.2, w: 11 }
+        bay: { x: 66.5, y: 72.2, w: 11 }
       },
       {
         name: "Lamborghini Huracán",
         src: "public/images/hotwheels/cars/lamborghini-huracan.png",
         alt: "A green Lamborghini Huracán die-cast car with a black wing, shown in three-quarter view",
-        bay: { x: 11.2, y: 32.4, w: 11 }
+        bay: { x: 24.5, y: 72.3, w: 11 }
       },
       {
         name: "Dodge Charger",
         src: "public/images/hotwheels/cars/dodge-charger.png",
         alt: "A black Dodge Charger die-cast muscle car with red stripes, shown in three-quarter view",
-        bay: { x: 11.2, y: 47.5, w: 11 }
+        bay: { x: 38.5, y: 72.1, w: 11 }
       },
       {
         name: "Porsche 911 GT3 RS",
         src: "public/images/hotwheels/cars/porsche-911-gt3-rs.png",
         alt: "A silver Porsche 911 GT3 RS die-cast car with a red-accented wing, shown in three-quarter view",
-        bay: { x: 38, y: 71.1, w: 13.5 }
+        bay: { x: 52.5, y: 71.7, w: 12 }
       }
     ],
 
