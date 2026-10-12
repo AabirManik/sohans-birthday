@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="robots" content="noindex, nofollow" />
+<title>A Little Universe for Sohan</title>
+<meta name="description" content="A private birthday story. For my favourite person, on his favourite day." />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/scenes.css" />
+<link rel="stylesheet" href="css/gallery.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%E2%9D%A4%EF%B8%8F</text></svg>" />
+</head>
+<body class="is-loading">
+
+<a class="skip-link" href="#scene-1">Skip to the story</a>
+
+<nav class="progress" aria-label="Story scenes">
+  <ol class="progress__dots" id="progress-dots"></ol>
+</nav>
+
+<div class="scene-controls">
+  <button type="button" class="ctrl ctrl--prev" id="btn-prev" aria-label="Previous scene" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5 8 12l7 7" /></svg>
+  </button>
+  <button type="button" class="ctrl ctrl--next" id="btn-next" aria-label="Next scene" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" /></svg>
+  </button>
+</div>
+
+<div id="scroll-wrap">
+<main id="content">
+
+  <!-- ============================================ 01 — the sealed surprise -->
+  <section class="scene scene--cover" id="scene-1" data-scene="1" data-title="The sealed surprise" aria-labelledby="s1-title" tabindex="-1">
+    <div class="scene__inner cover-layout">
+
+      <div class="cover__col reveal">
+        <p class="eyebrow" data-bind="sealLine">A little surprise, made only for you.</p>
+
+        <h1 class="cover__title" id="s1-title">
+          <span>A Little</span>
+          <span>Universe <em class="accent-word" data-bind="coverTitleAccent">for Sohan</em></span>
+        </h1>
+
+        <p class="cover__line" data-bind="coverLine">For my favourite person, on his favourite day.</p>
+
+        <div class="scene__actions">
+          <button type="button" class="btn btn--solid" id="btn-unlock">
+            <span class="btn__label" data-bind="unlockLabel">Unlock your birthday surprise</span>
+            <svg class="btn__arrow" viewBox="0 0 22 8" aria-hidden="true" focusable="false"><path d="M0 4h20M16.5 1 20 4l-3.5 3" /></svg>
+          </button>
+        </div>
+
+        <div class="cover__meta">
+          <span>Private page</span>
+          <span>Six scenes</span>
+          <span>No account required</span>
+        </div>
+      </div>
+
+      <figure class="seal-art reveal" data-delay="2">
+        <svg viewBox="0 0 520 360" role="img" aria-label="A sealed envelope with a red wax seal.">
+          <g fill="none" stroke="rgba(242,238,233,0.32)" stroke-width="1.4">
+            <rect x="30" y="60" width="460" height="250" rx="3" />
+            <path d="M30 66 260 218 490 66" />
+          </g>
+          <g>
+            <circle cx="260" cy="218" r="34" fill="#c7334b" />
+            <circle cx="260" cy="218" r="34" fill="none" stroke="rgba(242,238,233,0.28)" stroke-width="1.2" stroke-dasharray="3 5" />
+            <text x="260" y="231" text-anchor="middle" font-family="Didot, Georgia, serif" font-size="34" fill="#efe8de">S</text>
+          </g>
+          <g stroke="rgba(242,238,233,0.14)" stroke-width="1">
+            <path d="M60 96h60M400 96h60M60 274h44M416 274h44" />
+          </g>
+        </svg>
+        <figcaption class="seal-art__caption">
+          <span>No. 01 — The sealed surprise</span>
+          <span>Tap to open</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ================================================== 02 — birthday spotlight -->
+  <section class="scene scene--spotlight" id="scene-2" data-scene="2" data-title="Birthday spotlight" aria-labelledby="s2-title" tabindex="-1">
+    <div class="scene__inner">
+      <p class="index-mark reveal"><b>02</b> Birthday spotlight</p>
+
+      <div class="spotlight-layout">
+        <div class="spotlight__text reveal" data-delay="1">
+          <h2 class="display" id="s2-title" data-bind="happyBirthdayHeading">Happy Birthday, Sohan!</h2>
+          <p class="lede" data-bind="spotlightLede">Today, the whole little universe is celebrating you.</p>
+
+          <div class="scene__actions">
+            <button type="button" class="btn btn--ghost" data-goto="3">
+              <span class="btn__label">Start our story</span>
+              <svg class="btn__arrow" viewBox="0 0 22 8" aria-hidden="true" focusable="false"><path d="M0 4h20M16.5 1 20 4l-3.5 3" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <figure class="plate reveal" data-delay="2">
+          <div class="plate__frame">
+            <img id="img-hero" src="public/images/sohan-hero.jpg" alt="" decoding="async" />
+          </div>
+          <figcaption class="plate__caption">
+            <span data-bind="heroCaption">The birthday boy</span>
+            <span class="hand" aria-hidden="true">made with love</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== 03 — our precious memories -->
+  <section class="scene scene--memories" id="scene-3" data-scene="3" data-title="Our precious memories" aria-labelledby="s3-title" tabindex="-1">
+    <div class="scene__inner">
+      <div class="memories__head reveal">
+        <div>
+          <p class="index-mark"><b>03</b> Our precious memories</p>
+          <h2 class="display display--sm" id="s3-title">Six frames I keep</h2>
+        </div>
+        <p class="caption" id="memories-note">Tap a frame to view it larger</p>
+      </div>
+
+      <ul class="memories__grid" id="memory-grid"><!-- built from content.js --></ul>
+    </div>
+  </section>
+
+  <!-- ============================================= 04 — our little superhero -->
+  <section class="scene scene--comic" id="scene-4" data-scene="4" data-title="Our little superhero movie" aria-labelledby="s4-title" tabindex="-1">
+    <div class="scene__inner">
+      <p class="index-mark reveal"><b>04</b> Our little superhero movie</p>
+      <h2 class="display display--sm reveal" id="s4-title" style="max-width:30ch" data-bind="heroCaptionLine">“Even superheroes need someone to come home to.”</h2>
+
+      <div class="comic reveal" data-delay="1" role="img" aria-label="Original two-panel comic artwork. Panel one: a masked red-and-blue hero swings on a web-line past a moonlit skyline. Panel two: two silhouettes hang upside down in front of the full moon, almost kissing, with a small heart drawn from web strands between them.">
+        <div class="comic__panels">
+
+          <!-- panel one — the swing -->
+          <div class="comic__panel">
+            <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="skyA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#05060c" />
+                  <stop offset="70%" stop-color="#0c1020" />
+                  <stop offset="100%" stop-color="#141a30" />
+                </linearGradient>
+                <linearGradient id="hazeA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#141a30" stop-opacity="0" />
+                  <stop offset="100%" stop-color="#1b2138" stop-opacity="0.85" />
+                </linearGradient>
+                <clipPath id="clipA"><rect width="1600" height="900" /></clipPath>
+              </defs>
+
+              <g clip-path="url(#clipA)">
+                <rect width="1600" height="900" fill="url(#skyA)" />
+
+                <g fill="#f2eee9">
+                  <circle cx="180" cy="120" r="3" opacity=".7" />
+                  <circle cx="420" cy="70" r="2.4" opacity=".5" />
+                  <circle cx="700" cy="150" r="2.8" opacity=".6" />
+                  <circle cx="960" cy="90" r="2.2" opacity=".45" />
+                  <circle cx="1180" cy="170" r="3" opacity=".65" />
+                  <circle cx="1490" cy="300" r="2.6" opacity=".5" />
+                  <circle cx="90" cy="330" r="2.4" opacity=".4" />
+                  <circle cx="880" cy="330" r="2.4" opacity=".35" />
+                </g>
+
+                <!-- moon -->
+                <circle cx="1310" cy="235" r="150" fill="#efe9dc" opacity=".1" />
+                <circle cx="1310" cy="235" r="112" fill="#efe9dc" opacity=".92" />
+                <g fill="#dcd3c1" opacity=".75">
+                  <circle cx="1272" cy="205" r="17" />
+                  <circle cx="1338" cy="258" r="12" />
+                  <circle cx="1330" cy="188" r="8" />
+                </g>
+
+                <!-- distant skyline -->
+                <path fill="#111629" d="M0 900V640h70v-70h64v96h58V548h74v78h62V600h84V520h66v116h72V574h80v92h68V544h74v104h86V596h64v78h78V556h70v112h84V614h64v66h76V566h72v108h70V606h96v-56h60v350z" />
+                <!-- near skyline -->
+                <path fill="#070911" d="M0 900V724h96V560h88v142h74V636h96v200h84V596h92v118h78V672h102v134h88V620h96v150h84V700h98v92h86V646h92v130h88V716h94v62h104V668h86v112h76v-84h94v120h96V900z" />
+                <g fill="#e9c89a" opacity=".5">
+                  <rect x="118" y="600" width="12" height="16" /><rect x="150" y="640" width="12" height="16" />
+                  <rect x="228" y="676" width="12" height="16" /><rect x="356" y="700" width="12" height="16" />
+                  <rect x="470" y="650" width="12" height="16" /><rect x="600" y="740" width="12" height="16" />
+                  <rect x="724" y="712" width="12" height="16" /><rect x="866" y="744" width="12" height="16" />
+                  <rect x="990" y="680" width="12" height="16" /><rect x="1124" y="756" width="12" height="16" />
+                  <rect x="1258" y="726" width="12" height="16" /><rect x="1400" y="770" width="12" height="16" />
+                  <rect x="1520" y="716" width="12" height="16" /><rect x="144" y="776" width="12" height="16" />
+                  <rect x="404" y="784" width="12" height="16" /><rect x="1044" y="812" width="12" height="16" />
+                </g>
+                <rect y="740" width="1600" height="160" fill="url(#hazeA)" />
+
+                <!-- the swing -->
+                <g class="swing">
+                  <path d="M560 170C505 70 452 -10 418 -120" stroke="#efe9dc" stroke-width="4" fill="none" opacity=".72" />
+                  <g transform="translate(560 170) rotate(13) scale(1.15)">
+                    <!-- web strand from the fist -->
+                    <path d="M0 0 -8 -140" stroke="#efe9dc" stroke-width="3" opacity=".7" />
+                    <!-- arm into the fist -->
+                    <path d="M0 0 32 42" stroke="#c7334b" stroke-width="24" stroke-linecap="round" />
+                    <path d="M32 42 74 58" stroke="#c7334b" stroke-width="26" stroke-linecap="round" />
+                    <!-- trailing arm -->
+                    <path d="M78 62 46 104 12 122" stroke="#c7334b" stroke-width="23" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- neck, torso, hips -->
+                    <path d="M58 40 80 64" stroke="#c7334b" stroke-width="26" stroke-linecap="round" />
+                    <path d="M50 70 96 44 140 134 98 156 Z" fill="#c7334b" />
+                    <path d="M98 156 140 134 152 172 108 194 Z" fill="#2f4ea8" />
+                    <!-- legs -->
+                    <path d="M120 162 178 188" stroke="#2f4ea8" stroke-width="32" stroke-linecap="round" />
+                    <path d="M178 188 224 174" stroke="#2f4ea8" stroke-width="27" stroke-linecap="round" />
+                    <path d="M224 174 243 186" stroke="#2f4ea8" stroke-width="21" stroke-linecap="round" />
+                    <path d="M118 170 154 236" stroke="#2f4ea8" stroke-width="30" stroke-linecap="round" />
+                    <path d="M154 236 138 298" stroke="#2f4ea8" stroke-width="25" stroke-linecap="round" />
+                    <path d="M138 298 121 312" stroke="#2f4ea8" stroke-width="19" stroke-linecap="round" />
+                    <!-- masked head -->
+                    <circle cx="56" cy="32" r="30" fill="#c7334b" />
+                    <path d="M50 20q20-6 30 8-8 16-28 10-10-10-2-18z" fill="#f2eee9" />
+                    <path d="M64 28l12 7" stroke="#0a0a0b" stroke-width="3" stroke-linecap="round" />
+                    <!-- suit webbing -->
+                    <g stroke="#8e1f31" stroke-width="2.4" opacity=".5" fill="none">
+                      <path d="M62 76 106 140M84 56 124 112" />
+                      <path d="M58 104 114 96M74 130 130 126" />
+                    </g>
+                    <!-- chest emblem -->
+                    <path d="M92 112l14 9-9 14-14-9z" fill="#efe9dc" opacity=".9" />
+                  </g>
+                </g>
+
+                <rect y="860" width="1600" height="40" fill="#05060c" opacity=".55" />
+              </g>
+            </svg>
+            <span class="comic__tag">Panel 01 — The swing</span>
+          </div>
+
+          <!-- panel two — the almost-kiss -->
+          <div class="comic__panel">
+            <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <defs>
+                <radialGradient id="moonB" cx="50%" cy="42%" r="60%">
+                  <stop offset="0%" stop-color="#f7f2e7" />
+                  <stop offset="78%" stop-color="#e9e1d1" />
+                  <stop offset="100%" stop-color="#d6ccb9" />
+                </radialGradient>
+                <clipPath id="clipB"><rect width="1600" height="900" /></clipPath>
+
+                <!-- one hanging figure in profile, drawn once and mirrored -->
+                <g id="hanger">
+                  <!-- body: foot, leg, hip, waist and shoulders as one outline -->
+                  <path d="M714 40L710 92C716 140 712 190 716 240C722 290 730 322 734 352C728 396 724 416 726 440C736 476 742 512 740 548L646 548C646 512 650 476 654 440C652 416 648 396 650 356C658 320 662 288 658 240C650 186 652 136 650 92L646 40Z" fill="#05060a" />
+                  <!-- arm hanging clear of the head -->
+                  <path d="M648 544C630 584 622 612 622 650" stroke="#05060a" stroke-width="28" fill="none" stroke-linecap="round" />
+                  <!-- hair -->
+                  <circle cx="666" cy="572" r="26" fill="#05060a" />
+                  <!-- head in profile, face turned in -->
+                  <circle cx="714" cy="600" r="56" fill="#05060a" />
+                  <path d="M758 576 790 600 756 616 Z" fill="#05060a" />
+                  <!-- rim light along the outer contour -->
+                  <g stroke="currentColor" fill="none" stroke-width="5" stroke-linecap="round" opacity=".95">
+                    <path d="M642 50 646 88" />
+                    <path d="M646 100C650 150 650 195 652 240C654 300 644 330 644 356" />
+                    <path d="M642 362C648 400 650 418 652 440C644 478 640 514 642 546" />
+                  </g>
+                </g>
+              </defs>
+
+              <g clip-path="url(#clipB)">
+                <rect width="1600" height="900" fill="#06070d" />
+                <g fill="#f2eee9">
+                  <circle cx="240" cy="140" r="3" opacity=".55" />
+                  <circle cx="520" cy="90" r="2.4" opacity=".4" />
+                  <circle cx="1160" cy="120" r="2.8" opacity=".5" />
+                  <circle cx="1420" cy="220" r="3" opacity=".45" />
+                  <circle cx="330" cy="620" r="2.4" opacity=".35" />
+                  <circle cx="1330" cy="700" r="2.6" opacity=".4" />
+                </g>
+
+                <!-- full moon -->
+                <circle cx="800" cy="545" r="425" fill="url(#moonB)" />
+                <g fill="#d9d0bd" opacity=".6">
+                  <circle cx="540" cy="420" r="36" />
+                  <circle cx="1075" cy="700" r="28" />
+                  <circle cx="640" cy="820" r="18" />
+                  <circle cx="1090" cy="410" r="15" />
+                </g>
+
+                <!-- the line they hang from -->
+                <path d="M30 44C240 96 470 58 660 68L940 68C1130 58 1360 96 1570 44"
+                      stroke="#efe9dc" stroke-width="3.5" fill="none" opacity=".6" />
+
+                <!-- heart drawn from web strands -->
+                <g class="heart-web" transform="translate(800 265) scale(0.8)" fill="none" stroke="#c7334b">
+                  <path stroke-width="6" d="M0 78C-46 46-84 24-84-14c0-30 24-48 48-48 18 0 32 10 36 24 4-14 18-24 36-24 24 0 48 18 48 48 0 38-38 60-84 92z" />
+                  <g stroke-width="2.4" opacity=".55">
+                    <path d="M-84-14h168M-70 20h140M0-38v116M-52-34 52 44M52-34-52 44" />
+                  </g>
+                </g>
+
+                <!-- left figure, then its mirror -->
+                <use href="#hanger" color="#c7334b" />
+                <g transform="translate(1600 0) scale(-1 1)">
+                  <use href="#hanger" color="#2f4ea8" />
+                </g>
+              </g>
+            </svg>
+            <span class="comic__tag">Panel 02 — Coming home</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="comic__plate reveal" data-delay="2">
+        <span>Two panels, drawn in code</span>
+        <span>Panel 01 / 02</span>
+      </div>
+
+      <div class="scene__actions reveal" data-delay="3">
+        <button type="button" class="btn btn--ghost" data-goto="5">
+          <span class="btn__label">Keep going, birthday boy</span>
+          <svg class="btn__arrow" viewBox="0 0 22 8" aria-hidden="true" focusable="false"><path d="M0 4h20M16.5 1 20 4l-3.5 3" /></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================== 05 — a letter from her -->
+  <section class="scene scene--letter" id="scene-5" data-scene="5" data-title="A letter from your favourite person" aria-labelledby="s5-title" tabindex="-1">
+    <div class="scene__inner">
+      <p class="index-mark reveal"><b>05</b> A letter from your favourite person</p>
+      <h2 class="display display--sm reveal" id="s5-title" style="max-width:20ch">Written by hand, kept for you</h2>
+
+      <div class="letter-stage reveal" data-delay="1" id="letter-stage">
+
+        <div class="letter-closed" id="letter-closed">
+          <div class="letter-closed__art">
+            <svg viewBox="0 0 520 360" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="rgba(242,238,233,0.32)" stroke-width="1.4">
+                <rect x="30" y="60" width="460" height="250" rx="3" />
+                <path d="M30 66 260 218 490 66" />
+              </g>
+              <circle cx="260" cy="218" r="34" fill="#c7334b" />
+              <text x="260" y="231" text-anchor="middle" font-family="Didot, Georgia, serif" font-size="34" fill="#efe8de">S</text>
+            </svg>
+          </div>
+          <p class="caption" data-bind="letterClosedNote">There is something here for you. It has been waiting.</p>
+          <button type="button" class="btn btn--solid" id="btn-open-letter">
+            <span class="btn__label" data-bind="openLetterLabel">Open my letter</span>
+            <svg class="btn__arrow" viewBox="0 0 22 8" aria-hidden="true" focusable="false"><path d="M0 4h20M16.5 1 20 4l-3.5 3" /></svg>
+          </button>
+        </div>
+
+        <article class="letter-paper" id="letter-paper" hidden aria-labelledby="letter-title">
+          <div class="letter-paper__inner">
+            <p class="letter-paper__kicker" data-bind="letterKicker">For you, on your day</p>
+            <h3 class="letter-paper__title" id="letter-title" tabindex="-1" data-bind="letterTitle">Happy birthday, my love</h3>
+            <div class="letter-body" id="letter-body"><!-- rendered from content.js --></div>
+            <p class="letter-sign" id="letter-sign"></p>
+          </div>
+          <button type="button" class="letter-fold" id="btn-close-letter" aria-label="Close the letter and go back">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
+        </article>
+
+      </div>
+
+      <div class="scene__actions reveal" data-delay="2">
+        <button type="button" class="btn btn--ghost" id="btn-to-wish" data-goto="6" hidden>
+          <span class="btn__label">Meet me at the cake</span>
+          <svg class="btn__arrow" viewBox="0 0 22 8" aria-hidden="true" focusable="false"><path d="M0 4h20M16.5 1 20 4l-3.5 3" /></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== 06 — make a wish -->
+  <section class="scene scene--cake" id="scene-6" data-scene="6" data-title="Make a wish, Sohan" aria-labelledby="s6-title" tabindex="-1">
+    <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+    <div class="scene__inner">
+      <p class="index-mark reveal"><b>06</b> Make a wish, Sohan</p>
+
+      <div class="wish-layout">
+        <div class="wish__text reveal" data-delay="1">
+          <h2 class="display" id="s6-title" data-bind="finaleHeading">Happy Birthday, Sohan</h2>
+          <p class="lede" data-bind="finaleLede">Here's to every laugh, every little adventure, and all the birthdays still waiting for us.</p>
+
+          <div class="finale" id="finale" hidden>
+            <p class="finale__line" data-bind="finalLine">I love you. Always.</p>
+            <p class="finale__sign" data-bind="finalSignOff">Forever yours, Your favourite person</p>
+            <button type="button" class="btn btn--quiet" id="btn-replay">Read it again from the top</button>
+          </div>
+        </div>
+
+        <div class="cake reveal" data-delay="2" role="img" aria-label="A two-tier birthday cake with five lit candles on a simple dark pedestal.">
+          <svg class="cake__svg" viewBox="0 0 480 470" aria-hidden="true" focusable="false">
+            <!-- plate -->
+            <ellipse cx="240" cy="386" rx="176" ry="16" fill="#0f0e10" />
+            <ellipse cx="240" cy="382" rx="168" ry="14" fill="#1a181b" />
+
+            <!-- candles -->
+            <g class="candles">
+              <g class="candle" transform="translate(176 0)">
+                <rect x="-4" y="216" width="8" height="66" fill="#efe8de" />
+                <rect x="-4" y="230" width="8" height="8" fill="#c7334b" />
+                <rect x="-4" y="254" width="8" height="8" fill="#c7334b" />
+              </g>
+              <g class="candle" transform="translate(208 0)">
+                <rect x="-4" y="196" width="8" height="86" fill="#efe8de" />
+                <rect x="-4" y="212" width="8" height="8" fill="#2f4ea8" />
+                <rect x="-4" y="240" width="8" height="8" fill="#2f4ea8" />
+              </g>
+              <g class="candle" transform="translate(240 0)">
+                <rect x="-4" y="182" width="8" height="100" fill="#efe8de" />
+                <rect x="-4" y="200" width="8" height="8" fill="#c7334b" />
+                <rect x="-4" y="232" width="8" height="8" fill="#c7334b" />
+              </g>
+              <g class="candle" transform="translate(272 0)">
+                <rect x="-4" y="196" width="8" height="86" fill="#efe8de" />
+                <rect x="-4" y="212" width="8" height="8" fill="#2f4ea8" />
+                <rect x="-4" y="240" width="8" height="8" fill="#2f4ea8" />
+              </g>
+              <g class="candle" transform="translate(304 0)">
+                <rect x="-4" y="216" width="8" height="66" fill="#efe8de" />
+                <rect x="-4" y="230" width="8" height="8" fill="#c7334b" />
+                <rect x="-4" y="254" width="8" height="8" fill="#c7334b" />
+              </g>
+
+              <g class="flames">
+                <g class="flame" transform="translate(176 216)"><path class="flame__body" d="M0-26c9 10 13 17 13 24 0 8-6 14-13 14s-13-6-13-14c0-7 4-14 13-24z" fill="#e8a94e" /><path d="M0-9c4 5 6 8 6 12 0 4-3 7-6 7s-6-3-6-7c0-4 2-7 6-12z" fill="#f7e2b0" /></g>
+                <g class="flame" transform="translate(208 196)"><path class="flame__body" d="M0-26c9 10 13 17 13 24 0 8-6 14-13 14s-13-6-13-14c0-7 4-14 13-24z" fill="#e8a94e" /><path d="M0-9c4 5 6 8 6 12 0 4-3 7-6 7s-6-3-6-7c0-4 2-7 6-12z" fill="#f7e2b0" /></g>
+                <g class="flame" transform="translate(240 182)"><path class="flame__body" d="M0-28c10 11 14 18 14 26 0 9-6 15-14 15s-14-6-14-15c0-8 4-15 14-26z" fill="#e8a94e" /><path d="M0-9c4 5 6 8 6 12 0 4-3 7-6 7s-6-3-6-7c0-4 2-7 6-12z" fill="#f7e2b0" /></g>
+                <g class="flame" transform="translate(272 196)"><path class="flame__body" d="M0-26c9 10 13 17 13 24 0 8-6 14-13 14s-13-6-13-14c0-7 4-14 13-24z" fill="#e8a94e" /><path d="M0-9c4 5 6 8 6 12 0 4-3 7-6 7s-6-3-6-7c0-4 2-7 6-12z" fill="#f7e2b0" /></g>
+                <g class="flame" transform="translate(304 216)"><path class="flame__body" d="M0-26c9 10 13 17 13 24 0 8-6 14-13 14s-13-6-13-14c0-7 4-14 13-24z" fill="#e8a94e" /><path d="M0-9c4 5 6 8 6 12 0 4-3 7-6 7s-6-3-6-7c0-4 2-7 6-12z" fill="#f7e2b0" /></g>
+              </g>
+
+              <g class="smoke" opacity="0" stroke="#8d8894" stroke-width="2.4" fill="none" stroke-linecap="round">
+                <path d="M176 210q7-16-3-28" />
+                <path d="M208 190q8-18-3-30" />
+                <path d="M240 176q8-20-3-32" />
+                <path d="M272 190q8-18-3-30" />
+                <path d="M304 210q7-16-3-28" />
+              </g>
+            </g>
+
+            <!-- cake -->
+            <g class="cake__body">
+              <rect x="150" y="278" width="180" height="72" fill="#efe8de" />
+              <rect x="150" y="278" width="180" height="9" fill="#c7334b" />
+              <rect x="104" y="346" width="272" height="40" fill="#e6ded2" />
+              <rect x="104" y="346" width="272" height="9" fill="#c7334b" />
+              <g fill="#c7334b">
+                <circle cx="176" cy="334" r="5" /><circle cx="216" cy="338" r="5" />
+                <circle cx="258" cy="336" r="5" /><circle cx="300" cy="338" r="5" />
+              </g>
+              <g fill="#2f4ea8" opacity=".85">
+                <circle cx="150" cy="374" r="5" /><circle cx="240" cy="378" r="5" /><circle cx="330" cy="374" r="5" />
+              </g>
+              <rect x="96" y="382" width="288" height="10" rx="4" fill="#12100f" />
+            </g>
+          </svg>
+
+          <div class="cake__actions">
+            <button type="button" class="btn btn--solid" id="btn-wish">
+              <span class="btn__label" data-bind="wishLabel">Make a wish</span>
+              <svg class="btn__arrow" viewBox="0 0 22 8" aria-hidden="true" focusable="false"><path d="M0 4h20M16.5 1 20 4l-3.5 3" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="scene__inner">
+      <span data-bind="footNote">Made for you. Nothing here leaves this page.</span>
+      <span>A Little Universe for Sohan</span>
+    </div>
+  </footer>
+
+</main>
+</div>
+
+<!-- photo lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
+  <div class="lightbox__backdrop" data-close></div>
+  <div class="lightbox__panel">
+    <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close enlarged photo">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg>
+    </button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5 8 12l7 7" /></svg>
+    </button>
+    <figure class="lightbox__figure">
+      <img id="lightbox-img" alt="" />
+      <figcaption id="lightbox-caption" class="lightbox__caption"></figcaption>
+      <p class="lightbox__count" id="lightbox-count" aria-live="polite"></p>
+    </figure>
+    <button type="button" class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" /></svg>
+    </button>
+  </div>
+</div>
+
+<noscript>
+  <div class="noscript-note">This page is animated with JavaScript. Please enable it to open the surprise.</div>
+</noscript>
+
+<script src="js/content.js"></script>
+<script src="js/smooth-scroll.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

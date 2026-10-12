@@ -1,0 +1,481 @@
+/* ==========================================================================
+   scenes.css — one composition per scene
+   ========================================================================== */
+
+/* --------------------------------------------------------------- 01 cover */
+.scene--cover {
+  background:
+    radial-gradient(900px 620px at 62% 34%, rgba(242, 238, 233, 0.05), transparent 65%),
+    linear-gradient(180deg, #0a0a0b, #0d0b0c 70%, #0a0a0b);
+}
+.cover-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+.cover__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 1rem + 6.6vw, 6.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0.5rem 0 1.4rem;
+}
+.cover__title span {
+  display: block;
+}
+.cover__title .accent-word {
+  font-style: italic;
+  color: var(--accent-soft);
+}
+.cover__line {
+  margin: 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line-2);
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 0.35vw + 0.9rem, 1.2rem);
+  color: var(--ink-2);
+}
+.cover__meta {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+/* the sealed envelope — line art, no glow */
+.seal-art {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  justify-self: end;
+}
+.seal-art svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.seal-art__caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line-2);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+/* unlock → transition out */
+body.is-unlocking .scene--cover .seal-art {
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  opacity: 0;
+  transform: translateY(-12px);
+}
+body.is-unlocking .scene--cover .cover__col {
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* ---------------------------------------------------------- 02 spotlight */
+.scene--spotlight {
+  background: linear-gradient(180deg, #0a0a0b, #0c0b0c);
+}
+.spotlight-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: clamp(2rem, 6vw, 5.5rem);
+  align-items: end;
+}
+.spotlight__text { padding-bottom: 0.5rem; }
+.spotlight__text .lede { margin-top: 1.2rem; }
+
+.plate { margin: 0; max-width: min(400px, 100%); justify-self: end; }
+.plate__frame {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.plate__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 26%;
+  filter: saturate(0.94) contrast(1.03);
+}
+.plate__caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.plate__caption .hand {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--accent-soft);
+}
+
+/* ---------------------------------------------------------- 03 memories */
+.scene--memories {
+  background: linear-gradient(180deg, #0a0a0b, #0b0a0b 40%, #0a0a0b);
+}
+.memories__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--line-2);
+  margin-bottom: clamp(2rem, 5vh, 3rem);
+}
+.memories__head .display { margin: 0.4rem 0 0; max-width: none; }
+
+/* ----------------------------------------------------------- 04 comic */
+.scene--comic {
+  background: linear-gradient(180deg, #0a0a0b, #0b0a0d 55%, #0a0a0b);
+  padding-block: clamp(3rem, 6vh, 4.5rem);
+}
+.comic {
+  position: relative;
+  border: 1px solid var(--line);
+  background: #05060c;
+  overflow: hidden;
+}
+.comic__panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line-2);
+}
+.comic__panel {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #05060c;
+}
+.comic__panel > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.comic__tag {
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  top: 10px;
+  padding: 4px 8px;
+  border: 1px solid rgba(242, 238, 233, 0.24);
+  background: rgba(5, 6, 12, 0.6);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(242, 238, 233, 0.72);
+}
+
+/* the swing — slow pendulum, nothing else moves in the panel */
+.swing {
+  transform-box: view-box;
+  transform-origin: 560px 170px;
+  animation: swingBeat 7.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes swingBeat {
+  0%, 100% { transform: rotate(-7deg); }
+  50%      { transform: rotate(9deg); }
+}
+.heart-web {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: heartBeat 5s ease-in-out infinite;
+}
+@keyframes heartBeat {
+  0%, 100% { opacity: 0.72; }
+  50%      { opacity: 1; }
+}
+
+.comic__plate {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+.comic__caption {
+  margin: clamp(1.5rem, 3.5vh, 2.4rem) 0 0;
+  max-width: 30ch;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 0.4rem + 1.7vw, 2.1rem);
+  line-height: 1.25;
+  color: var(--ink);
+}
+.scene--comic .scene__actions { margin-top: clamp(1.2rem, 3vh, 2rem); }
+
+/* ----------------------------------------------------------- 05 letter */
+.scene--letter {
+  background: linear-gradient(180deg, #0a0a0b, #0c0a0b 50%, #0a0a0b);
+}
+.letter-stage {
+  display: grid;
+  place-items: center;
+  min-height: 40vh;
+}
+.letter-closed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.6rem;
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+}
+.letter-closed__art { width: min(330px, 82vw); }
+.letter-closed__art svg { width: 100%; height: auto; display: block; }
+.letter-closed.is-gone {
+  opacity: 0;
+  transform: translateY(-14px);
+  pointer-events: none;
+}
+
+.letter-paper {
+  position: relative;
+  width: min(780px, 94vw);
+  padding: clamp(2rem, 5vw, 4rem);
+  background: var(--paper);
+  color: var(--paper-ink);
+  border-radius: 1px;
+  box-shadow: 0 50px 90px -50px rgba(0, 0, 0, 0.9), 0 1px 0 rgba(255, 255, 255, 0.06);
+  animation: paperIn 0.6s var(--ease) both;
+}
+@keyframes paperIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+.letter-paper__inner { max-width: 60ch; margin-inline: auto; }
+.letter-paper__kicker {
+  margin: 0 0 1.6rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--paper-line);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--paper-ink-2);
+}
+.letter-paper__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 0.7rem + 2.2vw, 2.6rem);
+  line-height: 1.1;
+  margin: 0 0 1.8rem;
+  color: var(--paper-ink);
+  outline: none;
+}
+.letter-body p {
+  margin: 0 0 1.15em;
+  font-size: clamp(1rem, 0.25rem + 0.45vw, 1.09rem);
+  line-height: 1.85;
+  color: var(--paper-ink);
+}
+.letter-body p:last-child { margin-bottom: 0; }
+.letter-sign {
+  margin: 2.4rem 0 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--paper-line);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--paper-ink);
+  white-space: pre-line;
+}
+.letter-fold {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--paper-line);
+  border-radius: 1px;
+  background: transparent;
+  color: var(--paper-ink-2);
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+.letter-fold:hover { background: var(--paper-ink); color: var(--paper); }
+.letter-fold svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+
+/* ------------------------------------------------------------ 06 cake */
+.scene--cake {
+  background: linear-gradient(180deg, #0a0a0b, #0d0b0c 55%, #0a0a0b);
+}
+.wish-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+.wish__text .lede { margin-top: 1.1rem; }
+
+.cake {
+  position: relative;
+  justify-self: center;
+  width: min(460px, 88vw);
+}
+.cake__svg { width: 100%; height: auto; display: block; }
+.cake__actions { margin-top: 2rem; display: flex; justify-content: center; }
+
+.flame__body {
+  transform-origin: center bottom;
+  animation: flicker 2.6s ease-in-out infinite;
+}
+@keyframes flicker {
+  0%, 100% { transform: scaleY(1); }
+  50%      { transform: scaleY(1.06) translateY(-1px); }
+}
+
+.scene--cake.is-wished .flames { opacity: 0; transition: opacity 0.4s ease-out; }
+.scene--cake.is-wished .smoke { opacity: 1; animation: smokeRise 2s ease-out forwards; }
+@keyframes smokeRise {
+  0%   { opacity: 0; transform: translateY(4px); }
+  25%  { opacity: 0.7; }
+  100% { opacity: 0; transform: translateY(-22px); }
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.finale {
+  margin-top: clamp(2rem, 5vh, 3rem);
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-2);
+  text-align: center;
+  animation: fadeUp 0.8s 0.25s var(--ease) both;
+}
+.finale__line {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.6rem, 0.8rem + 2.4vw, 2.8rem);
+  line-height: 1.15;
+  color: var(--ink);
+}
+.finale__sign {
+  margin: 0.8rem 0 1.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* =========================================================== responsive */
+
+@media (max-width: 1000px) {
+  .cover-layout,
+  .spotlight-layout,
+  .wish-layout {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+  }
+  .seal-art { justify-self: start; max-width: 340px; }
+  .plate { max-width: min(360px, 100%); justify-self: start; }
+  .wish-layout { text-align: left; }
+  .cake { justify-self: start; }
+}
+
+@media (max-width: 760px) {
+  :root { --shell: calc(100vw - 2.5rem); }
+
+  .progress {
+    right: auto;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    transform: none;
+    flex-direction: row;
+    gap: 0;
+    padding: 0 1.25rem calc(env(safe-area-inset-bottom) + 0.6rem);
+    background: linear-gradient(180deg, transparent, rgba(10, 10, 11, 0.92) 45%);
+  }
+  .progress__dots {
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .progress__dot {
+    width: auto;
+    min-width: 46px;
+    height: 46px;
+    justify-content: center;
+    font-size: 0.6rem;
+  }
+  .progress__dot::after {
+    position: absolute;
+    bottom: 8px;
+    margin: 0;
+    width: 10px;
+  }
+  .progress__dot[aria-current="true"]::after { width: 22px; }
+
+  .scene-controls {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(env(safe-area-inset-bottom) + 62px);
+  }
+
+  .scene { padding: clamp(3.6rem, 9vh, 5rem) 0 clamp(6.5rem, 16vh, 8.5rem); }
+  .seal-art { max-width: 270px; }
+  .scene__head .display,
+  .scene__head .display--sm { max-width: none; }
+  .memories__head { align-items: flex-start; }
+  .comic__panels { grid-template-columns: 1fr; }
+  .comic__tag { font-size: 0.5rem; left: 8px; top: 8px; }
+  .letter-paper { padding: 2rem 1.4rem; }
+  .cover__meta { gap: 1.2rem; flex-wrap: wrap; }
+}

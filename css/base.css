@@ -1,0 +1,449 @@
+/* ==========================================================================
+   base.css — editorial / cinematic dark system
+   One accent. Hairline rules. Type does the work.
+   ========================================================================== */
+
+:root {
+  /* neutral foundation — no colour washes */
+  --bg:          #0a0a0b;
+  --bg-raised:   #101012;
+  --bg-sunken:   #070708;
+
+  /* ink */
+  --ink:      #f2eee9;
+  --ink-2:    rgba(242, 238, 233, 0.68);
+  --ink-3:    rgba(242, 238, 233, 0.44);
+  --ink-4:    rgba(242, 238, 233, 0.26);
+
+  /* structure */
+  --line:    rgba(242, 238, 233, 0.16);
+  --line-2:  rgba(242, 238, 233, 0.08);
+
+  /* the single romantic accent */
+  --accent:      #c7334b;
+  --accent-soft: #e4566b;
+
+  /* paper (letter only) */
+  --paper:        #efe8de;
+  --paper-ink:    #17130f;
+  --paper-ink-2:  #4a4038;
+  --paper-line:   rgba(23, 19, 15, 0.14);
+
+  /* artwork only */
+  --comic-blue: #2f4ea8;
+  --track:      #cf7433;
+
+  /* type */
+  --font-display: "Didot", "Bodoni MT", "Playfair Display", "Iowan Old Style", "Times New Roman", Georgia, serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --shell: min(1240px, calc(100vw - clamp(2rem, 8vw, 9rem)));
+  --measure: 62ch;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --tap: 48px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: rgba(242, 238, 233, 0.25) transparent;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1100px 640px at 76% -8%, rgba(242, 238, 233, 0.045), transparent 62%),
+    radial-gradient(900px 700px at 0% 104%, rgba(199, 51, 75, 0.07), transparent 60%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(16px, 0.55vw + 13px, 17.5px);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* barely-there film grain — texture, not decoration */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -40%;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img { display: block; max-width: 100%; }
+
+::selection { background: var(--accent); color: #fff; }
+
+:focus-visible {
+  outline: 1.5px solid var(--accent-soft);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  z-index: 200;
+  padding: 0.8rem 1.2rem;
+  background: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: top 0.2s var(--ease);
+}
+.skip-link:focus { top: 0; }
+
+html.is-locked,
+body.is-locked { overflow: hidden; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+.index-mark {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin: 0 0 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.index-mark b {
+  font-weight: 400;
+  color: var(--accent-soft);
+}
+.index-mark::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line-2);
+  transform: translateY(-3px);
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.3rem, 1rem + 4.4vw, 4.6rem);
+  margin: 0.3em 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.display em {
+  font-style: italic;
+  color: var(--ink);
+  opacity: 0.9;
+}
+.display--sm { font-size: clamp(1.9rem, 0.9rem + 2.8vw, 3.2rem); }
+
+.lede {
+  margin: 0;
+  max-width: var(--measure);
+  font-size: clamp(1rem, 0.3vw + 0.9rem, 1.13rem);
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+
+.muted { color: var(--ink-3); }
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.rule {
+  height: 1px;
+  background: var(--line-2);
+  border: 0;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Controls — square, hairline, no pills
+   ========================================================================== */
+
+.btn {
+  --btn-bg: transparent;
+  --btn-fg: var(--ink);
+  --btn-line: var(--line);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1rem;
+  min-height: var(--tap);
+  padding: 0.85rem 1.5rem;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: 1px solid var(--btn-line);
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.35s var(--ease), color 0.35s var(--ease),
+              border-color 0.35s var(--ease), transform 0.35s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn__label { display: block; }
+.btn__arrow {
+  width: 22px;
+  height: 8px;
+  flex: none;
+  overflow: visible;
+}
+.btn__arrow path { stroke: currentColor; stroke-width: 1.2; fill: none; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+/* primary: fills on hover */
+.btn--solid {
+  --btn-bg: var(--ink);
+  --btn-fg: var(--bg);
+  --btn-line: var(--ink);
+}
+.btn--solid:hover {
+  --btn-bg: var(--accent);
+  --btn-fg: #fff;
+  --btn-line: var(--accent);
+}
+
+/* secondary: hairline */
+.btn--ghost { }
+.btn--ghost:hover {
+  --btn-line: var(--ink-2);
+  --btn-bg: rgba(242, 238, 233, 0.05);
+}
+
+/* quiet text link with underline */
+.btn--quiet {
+  padding: 0.6rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink-3);
+  font-size: 0.72rem;
+}
+.btn--quiet:hover { color: var(--ink); border-bottom-color: var(--ink-3); }
+
+.btn[disabled] { opacity: 0.45; cursor: default; transform: none; }
+
+/* ==========================================================================
+   Scene index (progress)
+   ========================================================================== */
+
+.progress {
+  position: fixed;
+  z-index: 55;
+  right: clamp(14px, 2vw, 34px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+.progress__dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.progress__dot {
+  position: relative;
+  width: 46px;
+  min-width: 46px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-4);
+  transition: color 0.4s var(--ease);
+}
+.progress__dot::after {
+  content: "";
+  width: 14px;
+  height: 1px;
+  margin-left: 8px;
+  background: currentColor;
+  transition: width 0.45s var(--ease), background-color 0.4s var(--ease);
+}
+.progress__dot:hover { color: var(--ink-2); }
+.progress__dot[aria-current="true"] {
+  color: var(--ink);
+}
+.progress__dot[aria-current="true"]::after {
+  width: 26px;
+  background: var(--accent);
+}
+
+.progress__bar { display: none; }
+
+/* prev / next */
+.scene-controls {
+  position: fixed;
+  z-index: 55;
+  right: clamp(14px, 2vw, 34px);
+  bottom: clamp(16px, 3vh, 34px);
+  display: flex;
+  gap: 0.5rem;
+}
+.ctrl {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: rgba(10, 10, 11, 0.72);
+  color: var(--ink-2);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.ctrl svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.3; }
+.ctrl:hover { color: var(--ink); border-color: var(--ink-3); background: rgba(20, 20, 22, 0.85); }
+.ctrl[hidden] { display: none; }
+
+/* ==========================================================================
+   Scene scaffolding
+   ========================================================================== */
+
+#scroll-wrap { will-change: transform; }
+
+.scene {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: clamp(4.5rem, 11vh, 7rem) 0 clamp(5rem, 12vh, 7.5rem);
+  isolation: isolate;
+}
+.scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.012) 50%, transparent);
+}
+
+.scene__inner {
+  position: relative;
+  z-index: 2;
+  width: var(--shell);
+  margin-inline: auto;
+}
+.scene:focus { outline: none; }
+.scene:focus-visible { outline: 1px solid var(--accent-soft); outline-offset: -6px; }
+
+.scene__head { margin-bottom: clamp(2rem, 5vh, 3.4rem); }
+.scene__head .display { max-width: 18ch; }
+.scene__head .lede { margin-top: 1rem; }
+
+.scene__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: clamp(1.8rem, 4vh, 3rem);
+}
+
+/* reveal — entrance only, no looping.
+   Hidden only when JS is running, so the page still reads without it. */
+.has-js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+}
+.has-js .reveal.is-visible { opacity: 1; transform: none; }
+.has-js .reveal[data-delay="1"] { transition-delay: 0.1s; }
+.has-js .reveal[data-delay="2"] { transition-delay: 0.2s; }
+.has-js .reveal[data-delay="3"] { transition-delay: 0.3s; }
+
+.site-foot {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 0 6rem;
+  border-top: 1px solid var(--line-2);
+  margin-top: 2rem;
+}
+.site-foot .scene__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+.noscript-note {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 300;
+  padding: 1rem;
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.15s !important;
+    scroll-behavior: auto !important;
+  }
+  .has-js .reveal { opacity: 1; transform: none; }
+}
