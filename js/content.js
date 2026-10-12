@@ -20,7 +20,7 @@ window.CONTENT = (function () {
     signOff: "Forever yours,\nYour favourite person 💗",
 
     /* ---------------- scene 1 ---------------- */
-    coverTitle: "A Little Universe for Sohan",
+    coverTitle: "Sohan's Birthday",
     coverTitleAccent: "for Sohan",
     coverLine: "For my favourite person, on his favourite day.",
     sealLine: "A little surprise, made only for you.",
@@ -86,7 +86,7 @@ window.CONTENT = (function () {
     /* ---------------- scene 4 ---------------- */
     heroCaptionLine: "“Even superheroes need someone to come home to.”",
     heroSceneLabel:
-      "Original comic-book artwork: a masked red-and-blue hero swings on a web-line past a moonlit skyline, then settles into an upside-down almost-kiss silhouette with a heart-shaped web flourish.",
+      "Three original vintage-comic panels show a red-and-blue web hero swinging above the city, pausing on a moonlit rooftop, and sharing a gentle upside-down kiss.",
 
     /* ---------------- scene 5 — the letter ----------------
        One entry per paragraph. Keep her words as they are. */
@@ -119,7 +119,7 @@ window.CONTENT = (function () {
       "The sealed surprise",
       "Birthday spotlight",
       "Our precious memories",
-      "Our little superhero movie",
+      "Our little superhero comic",
       "A letter from your favourite person",
       "Make a wish"
     ]
