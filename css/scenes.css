@@ -28,6 +28,7 @@
 .cover__title .accent-word {
   font-style: italic;
   color: var(--accent-soft);
+  white-space: nowrap;
 }
 .cover__line {
   margin: 0;
@@ -154,67 +155,115 @@ body.is-unlocking .scene--cover .cover__col {
 
 /* ----------------------------------------------------------- 04 comic */
 .scene--comic {
-  background: linear-gradient(180deg, #0a0a0b, #0b0a0d 55%, #0a0a0b);
-  padding-block: clamp(3rem, 6vh, 4.5rem);
+  --comic-ink: #17161a;
+  --comic-paper: #f2e2bd;
+  --comic-red: #df332e;
+  color: var(--comic-ink);
+  background-color: var(--comic-paper);
+  background-image: radial-gradient(rgba(23, 22, 26, 0.12) 1px, transparent 1px);
+  background-size: 12px 12px;
+  padding-block: clamp(2.5rem, 5vh, 4rem);
 }
+.scene--comic .index-mark { color: #4f4650; }
+.scene--comic .index-mark b { color: var(--comic-red); font-weight: 800; }
+.scene--comic .index-mark::after { background: rgba(23, 22, 26, 0.28); }
+.scene--comic .display { color: var(--comic-ink); }
 .comic {
   position: relative;
-  border: 1px solid var(--line);
-  background: #05060c;
+  border: 5px solid var(--comic-ink);
+  background: var(--comic-paper);
   overflow: hidden;
+  box-shadow: 9px 10px 0 var(--comic-ink);
+}
+.comic__masthead {
+  min-height: clamp(64px, 7.5vw, 92px);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.5rem, 1.6vw, 1.5rem);
+  padding: 0.35rem clamp(0.7rem, 2vw, 1.5rem);
+  color: #fff3da;
+  background: var(--comic-red);
+  border-bottom: 5px solid var(--comic-ink);
+}
+.comic__masthead-kicker,
+.comic__masthead-issue {
+  font-family: var(--font-mono);
+  font-size: clamp(0.48rem, 0.7vw, 0.68rem);
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+.comic__masthead strong {
+  color: #fff4dc;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(1.55rem, 5.2vw, 4.3rem);
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.88;
+  text-align: center;
+  text-shadow: 3px 3px 0 #172c46, 5px 5px 0 var(--comic-ink);
+  -webkit-text-stroke: 0.6px var(--comic-ink);
+}
+.comic__masthead-issue { text-align: right; }
+.comic__masthead-issue i {
+  display: inline-grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  margin-left: 0.35rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-style: normal;
 }
 .comic__panels {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--line-2);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  padding: 5px;
+  background: var(--comic-ink);
 }
 .comic__panel {
   position: relative;
-  aspect-ratio: 16 / 9;
+  min-width: 0;
+  margin: 0;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  background: #05060c;
+  background: var(--comic-paper);
+  border: 3px solid var(--comic-ink);
 }
-.comic__panel > svg {
+.comic__panel img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
 }
 .comic__tag {
   position: absolute;
   z-index: 2;
-  left: 10px;
-  top: 10px;
-  padding: 4px 8px;
-  border: 1px solid rgba(242, 238, 233, 0.24);
-  background: rgba(5, 6, 12, 0.6);
+  left: 8px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 0.62rem;
+  border: 2px solid var(--comic-ink);
+  background: #f5df9e;
+  box-shadow: 3px 3px 0 var(--comic-ink);
+  color: var(--comic-ink);
   font-family: var(--font-mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.22em;
+  font-size: clamp(0.5rem, 0.72vw, 0.68rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(242, 238, 233, 0.72);
 }
-
-/* the swing — slow pendulum, nothing else moves in the panel */
-.swing {
-  transform-box: view-box;
-  transform-origin: 560px 170px;
-  animation: swingBeat 7.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-}
-@keyframes swingBeat {
-  0%, 100% { transform: rotate(-7deg); }
-  50%      { transform: rotate(9deg); }
-}
-.heart-web {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: heartBeat 5s ease-in-out infinite;
-}
-@keyframes heartBeat {
-  0%, 100% { opacity: 0.72; }
-  50%      { opacity: 1; }
+.comic__tag b {
+  color: var(--comic-red);
+  font-size: 1.05em;
 }
 
 .comic__plate {
@@ -228,7 +277,7 @@ body.is-unlocking .scene--cover .cover__col {
   font-size: 0.64rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-4);
+  color: #514953;
 }
 .comic__caption {
   margin: clamp(1.5rem, 3.5vh, 2.4rem) 0 0;
@@ -237,9 +286,18 @@ body.is-unlocking .scene--cover .cover__col {
   font-style: italic;
   font-size: clamp(1.3rem, 0.4rem + 1.7vw, 2.1rem);
   line-height: 1.25;
-  color: var(--ink);
+  color: var(--comic-ink);
 }
 .scene--comic .scene__actions { margin-top: clamp(1.2rem, 3vh, 2rem); }
+.scene--comic .btn--ghost {
+  --btn-fg: var(--comic-ink);
+  --btn-line: rgba(23, 22, 26, 0.5);
+}
+.scene--comic .btn--ghost:hover {
+  --btn-bg: var(--comic-red);
+  --btn-fg: #fff4dc;
+  --btn-line: var(--comic-ink);
+}
 
 /* ----------------------------------------------------------- 05 letter */
 .scene--letter {
@@ -474,8 +532,22 @@ body.is-unlocking .scene--cover .cover__col {
   .scene__head .display,
   .scene__head .display--sm { max-width: none; }
   .memories__head { align-items: flex-start; }
-  .comic__panels { grid-template-columns: 1fr; }
-  .comic__tag { font-size: 0.5rem; left: 8px; top: 8px; }
+  .comic { box-shadow: 5px 6px 0 var(--comic-ink); }
+  .comic__masthead { grid-template-columns: 1fr auto; min-height: 62px; }
+  .comic__masthead-kicker { display: none; }
+  .comic__masthead strong { text-align: left; font-size: clamp(1.55rem, 8vw, 2.6rem); }
+  .comic__masthead-issue { font-size: 0.46rem; }
+  .comic__panels {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 82%);
+    grid-template-columns: none;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: var(--comic-ink) #ddc88d;
+  }
+  .comic__panel { aspect-ratio: 4 / 5; scroll-snap-align: start; }
+  .comic__tag { font-size: 0.58rem; left: 8px; bottom: 8px; }
   .letter-paper { padding: 2rem 1.4rem; }
   .cover__meta { gap: 1.2rem; flex-wrap: wrap; }
 }
